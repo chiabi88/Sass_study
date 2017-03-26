@@ -29,3 +29,9 @@
 	* 중첩규칙 (Nested Rules)
 	* (&) 부모 참조 선택자
 	* @extend, % (selector inheritance 상속)
+
+***
+* 마크다운(makrdown)
+	* [markdown cheat sheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
+	* [마크다운 배우기(kor)](https://www.evernote.com/shard/s3/sh/128acb97-d3c5-4eda-aa1b-c71ecd2f3a15/54a14ebd5d4ce7507bf78e5af640d0e9)
+
