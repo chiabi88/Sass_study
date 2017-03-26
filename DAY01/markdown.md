@@ -59,9 +59,9 @@ new Vue()
 ```
 
 ## 이미지 걸기
-[내 프사](https://avatars1.githubusercontent.com/u/13844520?v=3&u=de2e5ad2937800d189ea81f69e9619701debbf91&s=400)
+[내 프사](https://avatars0.githubusercontent.com/u/26450068?v=3&s=460)
 
-![내 프사](https://avatars1.githubusercontent.com/u/13844520?v=3&u=de2e5ad2937800d189ea81f69e9619701debbf91&s=400)
+![내 프사](https://avatars0.githubusercontent.com/u/26450068?v=3&s=460)
 
 느낌표를 써서 문서에 이미지 집어넣기.
 
