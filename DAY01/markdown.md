@@ -41,15 +41,15 @@
 배경을 바꾸려면 `background-color`를 사용해야 한다
 
 ## 언어로 문서 쓰기: ```(` 3개) 붙여 사용
-* ```html
+* '```html'
 ```html
 <h1> Lorem ipsum dolor sit amet. </h1>
 ```
-* ```javascrip
+* '```javascript'
 ```javascript
 new Vue()
 ```
-* ```css
+* '```css'
 ```css
 .parents::after{
   content: '';
