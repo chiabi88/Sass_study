@@ -50,12 +50,12 @@ body
 * SCSS
 
 ```sass
-$base-font-size: 16px
-$base-line-height: 1.4
-$type-scale: 1.618
+$base-font-size: 16px;
+$base-line-height: 1.4;
+$type-scale: 1.618;
 
 body {
-	font-size: $base-font-size
+	font-size: $base-font-size;
 }
 ```
 
@@ -65,7 +65,7 @@ body {
 ```javascript
 var a = 1;
 var b;
-	b = 'javascript';
+b = 'javascript';
 ```
 #### 전역변수 & 지역변수
 
@@ -86,17 +86,17 @@ a
 * SCSS
 
 ```sass
-$base-font-size: 16px
-$base-line-height: 1.4
-$type-scale: 1.618
+$base-font-size: 16px;
+$base-line-height: 1.4;
+$type-scale: 1.618;
 
 body {
-	$base-font-size: 12px
-	font-size: $base-font-size // 12px
+	$base-font-size: 12px;
+	font-size: $base-font-size; // 12px
 }
 a {
 
-	font-size: $base-font-size // 16px
+	font-size: $base-font-size; // 16px
 }
 ```
 
@@ -105,7 +105,7 @@ a {
 ```javascript
 var a = 1; // 전역 변수
 var b;
-	b = 'javascript';
+b = 'javascript';
 console.log(a, b);
 function f() {
 	a = 3; 			// 존재하는 전역 a에 3을 할당
@@ -133,7 +133,7 @@ a
 ```
 #### !default
 
-기본 값으로 설정하는 <strong>플래그</strong>
+기본 값으로 설정하는 <strong>플래그</strong><br>
 우선순위가 제일 마지막, 변수의 값이 변경될 경우 변경된 값이 적용됨
 ```sass
 $base-font-size: 16px
@@ -144,6 +144,34 @@ body
 ```
 ***
 
+## 데이터 타입
 
+6가지 데이터형을 지원함(Null, Number, String & Color, Boolean, Lists, Map)
+
+1. Null (값이 없음)
+
+	null
+
+2. Number (숫자형)
+
+	1.2, 3, 14px
+
+3. String & Color (문자형)
+
+	+ "../images/icon.jpg"
+	+ 'Times New Roman' | Verdana
+	+ lightblue | #fe4940
+
+4. Boolean (논리형 : 참, 거짓)
+	
+	true, false
+
+5. Lists ( 공백, 콤마(,)로 구분되는 목록 (자바스크립트 <em>배열</em>과 유사))
+	+ 0 10px 20px 40px
+	+ 2px solid gray
+	+ Helvertica, Sans serif
+
+6. map ( 키:값으로 구성된 그룹 (자바스크립트 <em>객체</em>와 유사))
+	$map: (key1: value, key2: value2)
 
 
