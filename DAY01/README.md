@@ -39,7 +39,8 @@
 * 마크다운(makrdown)
 	* [markdown cheat sheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
 	* [마크다운 사용법](https://gist.github.com/ihoneymon/652be052a0727ad59601)
-
+* 에디터
+	* [무료 텍스트 에디터 추천 (Sublime Text, Atom, Brackets, Visual Studio Code)](http://blog.gaerae.com/2015/05/sublimetext-brackets-atom-visualstudiocode.html)
 * 읽을 거리
 	* [6 Current Options for CSS Preprocessors](https://www.sitepoint.com/6-current-options-css-preprocessors/)
 	* [Front-End Tooling Trends for 2017](https://www.sitepoint.com/front-end-tooling-trends-2017/)
