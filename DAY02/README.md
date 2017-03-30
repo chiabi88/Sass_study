@@ -15,7 +15,7 @@
 		- 윈도우  :  c:\Users\%USERNAME%\AppData\Roaming\npm\node_modules
 	+ 전역으로 설치된 패키지는 전역에서 참조가 가능하다 <br/>
 	ex) npm의 경우 모든 프로젝트가 사용하기 때문에 지역으로 설치하는 것보다 전역에 설치하는 것이 일반적
-
+* [@extend 보다 믹스인을 사용하자](https://github.com/chiabi88/Sass_study/tree/master/DAY02/extend.md)
 * 웹 상에서 Sass를 css로 컴파일해주는 웹서비스 : [Sassmeister](http://www.sassmeister.com/)
 
 ***
@@ -157,7 +157,7 @@ $text-color: blue
 	color: $text-color
 
 .error
-	+text-color // blue, 만약 믹스인안에 !default가 없다면 red
+	+text-color // blue, 만약 믹스인 안에 !default가 없다면 red
 ```
 
 ```css
