@@ -16,6 +16,8 @@
 	+ 전역으로 설치된 패키지는 전역에서 참조가 가능하다 <br/>
 	ex) npm의 경우 모든 프로젝트가 사용하기 때문에 지역으로 설치하는 것보다 전역에 설치하는 것이 일반적
 
+* 웹 상에서 Sass를 css로 컴파일해주는 웹서비스 : [Sassmeister](http://www.sassmeister.com/)
+
 ***
 
 ## Sass Script
@@ -135,6 +137,8 @@ a
 
 기본 값으로 설정하는 <strong>플래그</strong><br>
 우선순위가 제일 마지막, 변수의 값이 변경될 경우 변경된 값이 적용됨
+해당 변수가 설정되지 않았거나 값이 null일때 값을 설정
+
 ```sass
 $base-font-size: 16px
 $base-font-size: 12px !default
@@ -144,7 +148,7 @@ body
 ```
 ***
 
-## 데이터 타입
+## 데이터 타입(Data Type)
 
 6가지 데이터형을 지원함(Null, Number, String & Color, Boolean, Lists, Map)
 
@@ -172,6 +176,34 @@ body
 	+ Helvertica, Sans serif
 
 6. map ( 키:값으로 구성된 그룹 (자바스크립트 <em>객체</em>와 유사))
+
 	$map: (key1: value, key2: value2)
 
+***
 
+## 연산(Operations)
+
+1. 사칙연산
+
+	+, -, *, /, %
+
+2. 비교연산
+
+	>, <, >=, <=, ==, !=
+
+3. 문자연산
+
+	문자와 문자를 접합하려는 경우 + 연산자를 사용
+
+4. 보간법 ( #{}, Interpolation )
+
+	변수를 ""내부에서 처리할 수 있도록 함
+
+5. 컬러연산
+	
+	color의 hex코드도 사칙연산이 가능함
+
+6. 기타연산
+
+	+ Boolean 데이터 얀산을 사용할 수 있음 (and, or, not)
+	+ 배열 객체의 length,join 등 지원 가능
