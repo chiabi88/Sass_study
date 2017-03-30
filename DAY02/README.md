@@ -146,6 +146,54 @@ $base-font-size: 12px !default
 body
 	font-size: $base-font-size // 16px
 ```
+
+※ 믹스인에서의 !default 쓰임
+
+```sass
+$text-color: blue
+
+=text-color
+	$text-color: red !default
+	color: $text-color
+
+.error
+	+text-color // blue, 만약 믹스인안에 !default가 없다면 red
+```
+
+```css
+.error {
+  color: blue;
+}
+```
+
+※ 믹스인에서의 !global 쓰임
+
+```sass
+$color: yellow
+
+=color_mixin($color: $color)
+	color: $color
+	$color: purple !global
+	color: $color
+
+.block1
+	+color_mixin
+
+.block2
+	color: $color
+```
+
+```css
+.block1 {
+  color: yellow;
+  color: yellow;
+}
+
+.block2 {
+  color: purple;
+}
+
+```
 ***
 
 ## 데이터 타입(Data Type)

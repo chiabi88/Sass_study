@@ -1,0 +1,61 @@
+body {
+  font-size: 16px;
+  font-family: "Nanum Gothic", "Malgun Gothic", Dotum, Gulim, Sasn-Serif;
+  line-height: 1.4;
+}
+
+h6 {
+  font-size: 25.888px;
+}
+
+h5 {
+  font-size: 41.88678px;
+}
+
+h4 {
+  font-size: 67.77282px;
+}
+
+h3 {
+  font-size: 109.65642px;
+}
+
+h2 {
+  font-size: 177.42408px;
+}
+
+h1 {
+  font-size: 287.07217px;
+}
+
+.main-section {
+  width: 100%;
+}
+
+@media screen and (min-width: 760px) and (max-width: 1279px) {
+  .main-section {
+    width: 50%;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .main-section {
+    width: 25%;
+  }
+}
+
+.side-section {
+  max-width: 100%;
+}
+
+@media screen and (min-width: 960px) {
+  .side-section {
+    max-width: 33.33333%;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .side-section {
+    max-width: 16.66667%;
+  }
+}
