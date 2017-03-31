@@ -17,8 +17,8 @@ $ gem uninstall sass
 ```sh
 # Ruby Sass 명령어
 
-$ sass --help, -h 							Sass 명령어 도움말 정보
-$ sass --version, -v 						설치 된 Sass 버전 정보 확인
+$ sass --help, -h							Sass 명령어 도움말 정보
+$ sass --version, -v						설치 된 Sass 버전 정보 확인
 
 $ sass [option] [input] [output]
 $ sass input.sass output.css 				Sass파일을 CSS파일로 변환
@@ -37,10 +37,10 @@ $ sass-convert [input] [output] 			Sass와 SCSS파일 간 변환
 ```sh
 # Node Sass 설치
 
-$ npm install node-sass				  프로젝트 로컬 설치
-$ npm install node-sass -g			  컴퓨터 전역 설치 확인
-$ npm show node-sass versions		  노드사스의 버전을 출력해줌
-$ npm show node-sass@4.* version	  4버전으로 시작하는 노드 사스들을 출력
+$ npm install node-sass					프로젝트 로컬 설치
+$ npm install node-sass -g				컴퓨터 전역 설치 확인
+$ npm show node-sass versions			노드사스의 버전을 출력해줌
+$ npm show node-sass@4.* version		4버전으로 시작하는 노드 사스들을 출력
 ```
 
 > node-sass -w -r sass -o css --output-style expanded --source-map ./map

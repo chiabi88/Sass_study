@@ -15,6 +15,9 @@
 		- 윈도우  :  c:\Users\%USERNAME%\AppData\Roaming\npm\node_modules
 	+ 전역으로 설치된 패키지는 전역에서 참조가 가능하다 <br/>
 	ex) npm의 경우 모든 프로젝트가 사용하기 때문에 지역으로 설치하는 것보다 전역에 설치하는 것이 일반적
+
+	+ [참조 : 슬쩍 떠보는 npm과 package.json](https://elegantcoder.com/beginning-npm-package/)
+
 * [@extend 보다 믹스인을 사용하자](https://github.com/chiabi88/Sass_study/tree/master/DAY02/extend.md)
 * 웹 상에서 Sass를 css로 컴파일해주는 웹서비스 : [Sassmeister](http://www.sassmeister.com/)
 
@@ -133,40 +136,8 @@ body
 a
 	font-size: $base-font-size // 16px
 ```
-#### !default
 
-기본 값으로 설정하는 <strong>플래그</strong><br>
-우선순위가 제일 마지막, 변수의 값이 변경될 경우 변경된 값이 적용됨
-해당 변수가 설정되지 않았거나 값이 null일때 값을 설정
-
-```sass
-$base-font-size: 16px
-$base-font-size: 12px !default
-
-body
-	font-size: $base-font-size // 16px
-```
-
-※ 믹스인에서의 !default 쓰임
-
-```sass
-$text-color: blue
-
-=text-color
-	$text-color: red !default
-	color: $text-color
-
-.error
-	+text-color // blue, 만약 믹스인 안에 !default가 없다면 red
-```
-
-```css
-.error {
-  color: blue;
-}
-```
-
-※ 믹스인에서의 !global 쓰임
+#### ※ 믹스인에서의 !global 쓰임
 
 ```sass
 $color: yellow
@@ -183,6 +154,23 @@ $color: yellow
 	color: $color
 ```
 
+* SCSS
+
+```sass
+$text-color: blue;
+
+@mixin text-color {
+	$text-color: red !default;
+	color: $text-color;
+}
+
+.error {
+	@include text-color; // blue, 만약 믹스인 안에 !default가 없다면 red
+}
+```
+
+* CSS
+
 ```css
 .block1 {
   color: yellow;
@@ -194,6 +182,63 @@ $color: yellow
 }
 
 ```
+
+#### !default
+
+기본 값으로 설정하는 <strong>플래그</strong><br>
+우선순위가 제일 마지막, 변수의 값이 변경될 경우 변경된 값이 적용됨
+해당 변수가 설정되지 않았거나 값이 null일때 값을 설정
+
+```sass
+$base-font-size: 16px
+$base-font-size: 12px !default
+
+body
+	font-size: $base-font-size // 16px
+```
+
+#### ※ 믹스인에서의 !default 쓰임
+
+* Sass
+
+```sass
+$text-color: blue
+
+=text-color
+	$text-color: red !default
+	color: $text-color
+
+.error
+	+text-color // blue, 만약 믹스인 안에 !default가 없다면 red
+```
+
+* SCSS
+
+```sass
+$color: yellow;
+
+@mixin color_mixin($color: $color){
+	color: $color;
+	$color: purple !global;
+	color: $color;
+}
+
+.block1 {
+	@include color_mixin;
+}
+.block2 {
+	color: $color;
+}
+```
+
+* CSS
+
+```css
+.error {
+  color: blue;
+}
+```
+
 ***
 
 ## 데이터 타입(Data Type)
