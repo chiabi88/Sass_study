@@ -16,7 +16,7 @@ $num: 1.7;
 $num-plus-plus: $num + 1 + 1;
 
 :root {
-	cotente: $num-plus-plus;
+	content: $num-plus-plus;
 }
 
 // --------------------------------
@@ -24,7 +24,7 @@ $num-plus-plus: $num + 1 + 1;
 $str: 'Pseudo Content';
 
 .app::after {
-	cotnent: $str;
+	content: $str;
 }
 
 // --------------------------------
@@ -117,14 +117,15 @@ $last: last($list); // 함수 호출 : f
 
 // --------------------------------
 // Map 맵 (키:값 쌍으로 구성된 데이터 덩어리)
-$heading-map: {
-	h1: 3rem;
-	h2: 2rem;
-	h3: 1.8rem;
-	h4: 1.5rem;
-	h5: 1.25rem;
+
+$heading-map: (
+	h1: 3rem,
+	h2: 2rem,
+	h3: 1.8rem,
+	h4: 1.5rem,
+	h5: 1.25rem,
 	h6: 1rem
-}
+);
 
 // * map Function
 // * map_get($map, $key) : map값을 리턴함

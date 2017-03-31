@@ -1,0 +1,80 @@
+:root {
+  content: 3.7;
+}
+
+.app::after {
+  content: "Pseudo Content";
+}
+
+a {
+  color: hotpink;
+}
+
+a:hover {
+  color: #1c8afb;
+}
+
+a:focus {
+  outline: none;
+  color: cyan;
+}
+
+a:active {
+  background: black;
+}
+
+:root {
+  content: true;
+}
+
+:root {
+  content: true;
+}
+
+body {
+  background: #F7CBCB;
+}
+
+body {
+  font: 1rem/1.65 Verdana, sans-serif;
+  word-spacing: 0.023em;
+  letter-spacing: 0.034em;
+}
+
+.memo {
+  font-size: 1.1rem;
+}
+
+.tabpanel {
+  border: 1px solid #323232;
+  font: 1.24rem/1.4 "Times New Roman", Times, Serif;
+}
+
+.list-content {
+  content: a;
+  content: f;
+}
+
+h1, .h1 {
+  font-size: 3rem;
+}
+
+h2, .h2 {
+  font-size: 2rem;
+}
+
+h3, .h3 {
+  font-size: 1.8rem;
+}
+
+h4, .h4 {
+  font-size: 1.5rem;
+}
+
+h5, .h5 {
+  font-size: 1.25rem;
+}
+
+h5, .h6 {
+  font-size: 1rem;
+}
