@@ -252,13 +252,15 @@ $color: yellow;
 2. Number (숫자형)
 
 	1.2, 3, 14px
-
+	
+	[참조 : Number Functions](http://sass-lang.com/documentation/Sass/Script/Functions.html#number_functions)
 3. String & Color (문자형)
 
 	+ "../images/icon.jpg"
 	+ 'Times New Roman' | Verdana
-	+ lightblue | #fe4940
+	+ lightblue | #fe4940 | rgba(255, 255, 255, 0.5) | hsla(260, 100%, 0%, 0.5)
 
+	[참조 : String Functions](http://sass-lang.com/documentation/Sass/Script/Functions.html#string_functions)
 4. Boolean (논리형 : 참, 거짓)
 	
 	true, false
@@ -268,9 +270,13 @@ $color: yellow;
 	+ 2px solid gray
 	+ Helvertica, Sans serif
 
+	[참조 : List Functions](http://sass-lang.com/documentation/Sass/Script/Functions.html#list-functions)
+
 6. map ( 키:값으로 구성된 그룹 (자바스크립트 <em>객체</em>와 유사))
 
 	$map: (key1: value, key2: value2)
+
+	[참조 : Map Functions](http://sass-lang.com/documentation/Sass/Script/Functions.html#map-functions)
 
 ***
 
