@@ -139,3 +139,100 @@ h5, .h6 { font-size: map-get($heading-map, h6); }
 // --------------------------------
 // 연산 (Operations)
 // +, -, *, /, %
+
+// --------------------------------
+// 산술 연산 과정에서 나눗셈은 주의가 요구!!!!
+// ※ 특히 font 속기형 작성 시에 
+
+$base-padding-gap: 10px;
+$base-margin-gap: 0 !default;
+$page-width: 1280px;
+
+%container {
+	width: $page-width;
+	marign: {
+		left: auto;
+		right: auto;
+	}
+}
+
+.container {
+	@extend %container;
+}
+
+%flex-vh-center {
+	display: flex;
+	justify-conent: center;
+	align-items: center;
+}
+.wrapper {
+	@extend %flex-vh-center;
+	width: $page-width - ($base-padding-gap * 2);
+	margin-top: $base-padding-gap / 2;
+	margin-bottom: $base-padding-gap * 1.5;
+}
+.flex-vh-center {
+	@extend %flex-vh-center;
+}
+
+.page-footer {
+	// 문자열 접합(용접, 붙이다)
+	$cursor-direction: 'w';
+	$cursor-style: 'resize';
+	cursor: '#{$cursor-direction}-#{$cursor-style}';
+	// cursor: $cursor-direction+'-'+$cursor-style;
+	$font-size: 14px;
+	$line-height :1.5;
+	$font-family: Dotum !global;
+	// Sass 변수를 문장 내에서 처리해주는 보간법(Interpolation) 방식
+	// style | variant |  weight | stretch | size/line-height | family 
+	font: #{$font-size}/#{$line-height} $font-family;
+}
+
+// * --------------------------------
+// * Sass 변수를 접합할 때 사용하는 인터폴레이션 (보간법, #{})
+// * --------------------------------
+$namespace: 'nhn';
+$props: ('button', 'gallery', 'carousel', 'tab');
+
+.#{$namespace}-#{nth($props, 1)} {
+	content: '-#{nth($props, 1)}-';
+}
+.#{$namespace}-#{nth($props, 2)} {
+	content: '-#{nth($props, 2)}-';
+}
+.#{$namespace}-#{nth($props, 3)} {
+	content: '-#{nth($props, 3)}-';
+}
+.#{$namespace}-#{nth($props, 4)} {
+	content: '-#{nth($props, 4)}-';
+}
+
+// --------------------------------
+// 보간법 + 웹폰트
+
+$g-font: "Open";
+
+// 'Open', 'Noto'
+@import url('https://fonts.googleapis.com/css?family=#{$g-font}+Sans');
+
+body {
+	font-fmaily: "#{$g-font} Sans", Sans-serif;
+}
+// --------------------------------
+// 비교연산
+// 1 < 20 // true
+// 10 <= 20 // true
+// 4 < 1 // false
+// 4 >= 1 // true
+// 1 + 1 == 2 // true
+// small != big // true
+// #000 != black // false
+
+@if 1 != 2 {
+	body::after {
+		display: block;
+		background: black;
+		content: 'true'
+	}
+}

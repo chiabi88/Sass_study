@@ -126,5 +126,5 @@ body {
 body::after {
   display: block;
   background: black;
-  content: 'true';
+  content: "true";
 }

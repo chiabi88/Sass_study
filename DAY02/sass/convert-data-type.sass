@@ -1,0 +1,230 @@
+// * --------------------------------
+// * Sass Data type
+// * --------------------------------
+// * 1. Number 숫자형
+// * 2. String 문자형
+// * 3. Colors 컬러유형
+// * 4. Boolean 논리형 (참/거짓)
+// * 5. Null 비어 있다 (Empty, 아무런 값이 설정되어 있지 않았다)
+// * 6. List 리스트 (집합, 배열, Array)
+// * 7. Map 맵 (객체, Object)
+// * --------------------------------
+
+// 숫자형, Number
+$num: 1.7
+$num-plus-plus: $num + 1 + 1
+
+\:root
+  content: $num-plus-plus
+
+// --------------------------------
+// 문자형, String
+$str: "Pseudo Content"
+
+.app::after
+  content: $str
+
+// --------------------------------
+// 컬러형, Color
+$keyword: hotpink
+$hex: #1c8afb
+$rgb: rgb(0, 0, 0)
+$hsl: hsl(180, 100%, 50%)
+
+a
+  color: $keyword
+
+  &:hover
+    color: $hex
+
+  &:focus
+    outline: none
+    color: $hsl
+
+  &:active
+    background: $rgb
+
+// --------------------------------
+// 논리형, Boolean
+\:root
+  content: $str != $num
+
+\:root
+  content: true
+
+$bg-color: true
+
+body
+  @if $bg-color
+    background: #F7CBCB
+
+// --------------------------------
+// Null
+
+$letter-gap: null
+
+body
+  $letter-gap: 0.034em
+
+  font: 1rem/1.65 Verdana, sans-serif
+  word-spacing: 0.023em
+  letter-spacing: $letter-gap
+
+.memo
+  font-size: 1.1rem
+  letter-spacing: $letter-gap
+
+// --------------------------------
+// List 집합 (값이 나열)
+
+// Seperator: Space
+$base-border-style: 1px solid #323232
+
+// Seperator: Comma
+$base-font-stack: "Times New Roman", Times, Serif
+
+.tabpanel
+  border: $base-border-style
+  font: 1.24rem / 1.4 $base-font-stack
+
+// * list Function
+// * nth($list, $n) : list의 first와 last를 구하는 함수
+@function first($list)
+  @return nth($list, 1)
+
+@function last($list)
+  @return nth($list, length($list))
+
+$list: a, b, c, d, e, f
+$first: first($list)
+
+// 함수 호출 : a
+$last: last($list)
+
+// 함수 호출 : f
+
+.list-content
+  content: $first
+  content: $last
+
+// --------------------------------
+// Map 맵 (키:값 쌍으로 구성된 데이터 덩어리)
+
+$heading-map: (h1: 3rem, h2: 2rem, h3: 1.8rem, h4: 1.5rem, h5: 1.25rem, h6: 1rem)
+
+// * map Function
+// * map_get($map, $key) : map값을 리턴함
+h1, .h1
+  font-size: map-get($heading-map, h1)
+
+h2, .h2
+  font-size: map-get($heading-map, h2)
+
+h3, .h3
+  font-size: map-get($heading-map, h3)
+
+h4, .h4
+  font-size: map-get($heading-map, h4)
+
+h5, .h5
+  font-size: map-get($heading-map, h5)
+
+h5, .h6
+  font-size: map-get($heading-map, h6)
+
+// --------------------------------
+// 연산 (Operations)
+// +, -, *, /, %
+
+// --------------------------------
+// 산술 연산 과정에서 나눗셈은 주의가 요구!!!!
+// ※ 특히 font 속기형 작성 시에
+
+$base-padding-gap: 10px
+$base-margin-gap: 0 !default
+$page-width: 1280px
+
+%container
+  width: $page-width
+  marign:
+    left: auto
+    right: auto
+
+.container
+  @extend %container
+
+%flex-vh-center
+  display: flex
+  justify-conent: center
+  align-items: center
+
+.wrapper
+  @extend %flex-vh-center
+
+  width: $page-width - $base-padding-gap * 2
+  margin-top: $base-padding-gap / 2
+  margin-bottom: $base-padding-gap * 1.5
+
+.flex-vh-center
+  @extend %flex-vh-center
+
+.page-footer
+  // 문자열 접합(용접, 붙이다)
+  $cursor-direction: "w"
+  $cursor-style: "resize"
+
+  cursor: "#{$cursor-direction}-#{$cursor-style}"
+
+  // cursor: $cursor-direction+'-'+$cursor-style;
+  $font-size: 14px
+  $line-height: 1.5
+  $font-family: Dotum !global
+
+  // Sass 변수를 문장 내에서 처리해주는 보간법(Interpolation) 방식
+  // style | variant |  weight | stretch | size/line-height | family
+  font: #{$font-size}/#{$line-height} $font-family
+
+// * --------------------------------
+// * Sass 변수를 접합할 때 사용하는 인터폴레이션 (보간법, #{})
+// * --------------------------------
+$namespace: "nhn"
+$props: "button", "gallery", "carousel", "tab"
+
+.#{$namespace}-#{nth($props, 1)}
+  content: "-#{nth($props, 1)}-"
+
+.#{$namespace}-#{nth($props, 2)}
+  content: "-#{nth($props, 2)}-"
+
+.#{$namespace}-#{nth($props, 3)}
+  content: "-#{nth($props, 3)}-"
+
+.#{$namespace}-#{nth($props, 4)}
+  content: "-#{nth($props, 4)}-"
+
+// --------------------------------
+// 보간법 + 웹폰트
+
+$g-font: "Open"
+
+// 'Open', 'Noto'
+@import url("https://fonts.googleapis.com/css?family=#{$g-font}+Sans")
+
+body
+  font-fmaily: "#{$g-font} Sans", Sans-serif
+
+// --------------------------------
+// 비교연산
+// 1 < 20 // true
+// 10 <= 20 // true
+// 4 < 1 // false
+// 4 >= 1 // true
+// 1 + 1 == 2 // true
+// small != big // true
+// #000 != black // false
+
+@if 1 != 2
+  body::after
+    display: block
+    background: black
+    content: "true"
