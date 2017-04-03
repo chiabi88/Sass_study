@@ -139,6 +139,8 @@ a
 
 #### ※ 믹스인에서의 !global 쓰임
 
+* Sass
+
 ```sass
 $color: yellow
 
@@ -186,7 +188,7 @@ $text-color: blue;
 #### !default
 
 기본 값으로 설정하는 <strong>플래그</strong><br>
-우선순위가 제일 마지막, 변수의 값이 변경될 경우 변경된 값이 적용됨
+우선순위가 제일 마지막, 변수의 값이 변경될 경우 변경된 값이 적용됨 <br>
 해당 변수가 설정되지 않았거나 값이 null일때 값을 설정
 
 ```sass
@@ -302,7 +304,29 @@ $color: yellow;
 	
 	color의 hex코드도 사칙연산이 가능함
 
+```sass
+p {
+	color: #010203 + #040506;
+}
+
+01 + 04 = 05
+02 + 05 = 07
+03 + 06 = 09
+------------
+#050709
+```
+
 6. 기타연산
 
-	+ Boolean 데이터 얀산을 사용할 수 있음 (and, or, not)
+	+ Boolean 데이터 연산을 사용할 수 있음 (and, or, not)
+	+ 리스트 연산 미지원
 	+ 배열 객체의 length,join 등 지원 가능
+
+```sass
+$age:20;
+.bool {
+   @if ($age > 10 and $age < 25) {
+      color: green;
+   }
+}
+```
