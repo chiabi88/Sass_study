@@ -72,6 +72,8 @@ $ node-sass --source-map-embed         소스매핑 URL을 데이터 URI에 포�
 $ node-sass --source-map-root          소스맵이 방출될 기본 경로 설정
 ```
 
+> Node.js에서 [sass-convert](https://www.npmjs.com/package/sass-convert)
+
 ### Ruby Sass 오류
 
 * Windows 환경에서 한글(CP949) 오류 : 언어 인코딩 UTF-8로 설정 
