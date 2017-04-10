@@ -159,15 +159,19 @@ $color: yellow
 * SCSS
 
 ```sass
-$text-color: blue;
+$color: yellow;
 
-@mixin text-color {
-	$text-color: red !default;
-	color: $text-color;
+@mixin color_mixin($color: $color){
+	color: $color;
+	$color: purple !global;
+	color: $color;
 }
 
-.error {
-	@include text-color; // blue, 만약 믹스인 안에 !default가 없다면 red
+.block1 {
+	@include color_mixin;
+}
+.block2 {
+	color: $color;
 }
 ```
 
@@ -217,19 +221,15 @@ $text-color: blue
 * SCSS
 
 ```sass
-$color: yellow;
+$text-color: blue;
 
-@mixin color_mixin($color: $color){
-	color: $color;
-	$color: purple !global;
-	color: $color;
+@mixin text-color {
+	$text-color: red !default;
+	color: $text-color;
 }
 
-.block1 {
-	@include color_mixin;
-}
-.block2 {
-	color: $color;
+.error {
+	@include text-color; // blue, 만약 믹스인 안에 !default가 없다면 red
 }
 ```
 
