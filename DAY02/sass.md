@@ -29,7 +29,7 @@ $ sass --watch [input]:[output], -w 		Sass폴더 내부의 파일을 CSS 폴더 
 $ sass --style compressed, -t 				아웃풋 스타일 (nested | expanded | compact | compressed)
 
 $ sass --sourcemap							소스맵
-$ sass-convert [input] [output] 			Sass와 SCSS파일 간 변환
+$ sass-convert [OPTIONS] [INPUT] [OUTPUT] 	Sass와 SCSS파일 간 변환
 ```
 
 ### Node Sass

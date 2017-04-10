@@ -148,6 +148,10 @@ $base-padding-gap: 10px;
 $base-margin-gap: 0 !default;
 $page-width: 1280px;
 
+@debug $page-width;
+@warn "warn";
+// @error "error";
+
 %container {
 	width: $page-width;
 	marign: {
