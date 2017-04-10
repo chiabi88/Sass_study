@@ -9,26 +9,26 @@
 	* Syntax Highlighting for Sass, IMESupport, ConvertToUTF8
 	* [win cheat sheet(영문)](https://www.shortcutfoo.com/app/dojos/sublime-text-3-win/cheatsheet)
 	* [Snippets](http://sublimetext.info/docs/en/extensibility/snippets.html)
-	* [yamoo9 Sublime-text-User-Snippets](https://github.com/yamoo9/Sublime-text-User-Snippets)
+	* [yamoo9 Sublime-text-User-Snippets](https://github.com/chiabi/Sublime-text-User-Snippets)
 * [Git](https://git-scm.com/)
-	* [yamoo9 Git 참조](https://github.com/yamoo9/FDS/blob/3rd_FDS/REFERENCES/Git.md)
+	* [yamoo9 Git 참조](https://github.com/chiabi/FDS/blob/3rd_FDS/REFERENCES/Git.md)
 	* [버전관리를 들어본적 없는 사람들을 위한 DVCS - Git](https://www.slideshare.net/ibare/dvcs-git)
 	* [svn 능력자를 위한 git 개념 가이드](https://www.slideshare.net/einsub/svn-git-17386752)
 * CLI
-	* [yamoo9 CLI 참조](https://github.com/yamoo9/FDS/blob/3rd_FDS/REFERENCES/CLI.md)
+	* [yamoo9 CLI 참조](https://github.com/chiabi/FDS/blob/3rd_FDS/REFERENCES/CLI.md)
 * [Node.js](https://nodejs.org/ko/)
 	* 참조 문서 : [JavaScript 표준을 위한 움직임: CommonJS와 AMD](http://d2.naver.com/helloworld/12864)
 * [NPM](https://www.npmjs.com/)
 * [node-sass](https://github.com/sass/node-sass)
-	* [yamoo9 node-sass 참조](https://github.com/yamoo9/FDS/blob/3rd_FDS/REFERENCES/Sass.md)
+	* [yamoo9 node-sass 참조](https://github.com/chiabi/FDS/blob/3rd_FDS/REFERENCES/Sass.md)
 * [Sass](http://sass-lang.com/)
 
 ## Sass
-* [참조](https://github.com/yamoo9/FDS/blob/3rd_FDS/LECTURE/README/0131.md)
+* [참조](https://github.com/chiabi/FDS/blob/3rd_FDS/LECTURE/README/0131.md)
 	* node Sass Command line
 	* SCSS, Sass
 	* CSS Sourcemap
-* [참조](https://github.com/yamoo9/FDS/blob/3rd_FDS/LECTURE/README/0201.md)
+* [참조](https://github.com/chiabi/FDS/blob/3rd_FDS/LECTURE/README/0201.md)
 	* 주석
 	* 중첩규칙 (Nested Rules)
 	* @import
