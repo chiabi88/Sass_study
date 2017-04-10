@@ -2,4 +2,4 @@
 
 스터디 참고 링크
 
-* [Yamoo9 FDS](https://github.com/chiabi/FDS/tree/3rd_FDS)
+* [Yamoo9 FDS](https://github.com/chiabi/FDS/tree/3rd_FDS/chiabi88/

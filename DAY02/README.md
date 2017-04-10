@@ -25,14 +25,14 @@
 
 ## Sass Script
 
-* [참조](https://github.com/chiabi/FDS/blob/3rd_FDS/LECTURE/README/0203.md)
-	+ [!optional](https://github.com/chiabi/FDS/blob/3rd_FDS/LECTURE/README/0203.md#optional)
-	+ [대체 선택자: % (placeholder selector)](https://github.com/chiabi/FDS/blob/3rd_FDS/LECTURE/README/0203.md#대체-선택자--placeholder-selector)
-	+ [호출제어](https://github.com/chiabi/FDS/blob/3rd_FDS/LECTURE/README/0203.md#호출-제어)
-	+ [중첩 @import](https://github.com/chiabi/FDS/blob/3rd_FDS/LECTURE/README/0203.md#중첩-import-nested-import)
-	+ [Sass Script](https://github.com/chiabi/FDS/blob/3rd_FDS/LECTURE/README/0203.md#sass-script)
+* [참조](https://github.com/chiabi88/FDS/blob/3rd_FDS/LECTURE/README/0203.md)
+	+ [!optional](https://github.com/chiabi88/FDS/blob/3rd_FDS/LECTURE/README/0203.md#optional)
+	+ [대체 선택자: % (placeholder selector)](https://github.com/chiabi88/FDS/blob/3rd_FDS/LECTURE/README/0203.md#대체-선택자--placeholder-selector)
+	+ [호출제어](https://github.com/chiabi88/FDS/blob/3rd_FDS/LECTURE/README/0203.md#호출-제어)
+	+ [중첩 @import](https://github.com/chiabi88/FDS/blob/3rd_FDS/LECTURE/README/0203.md#중첩-import-nested-import)
+	+ [Sass Script](https://github.com/chiabi88/FDS/blob/3rd_FDS/LECTURE/README/0203.md#sass-script)
 		- 변수 : 변수선언, 전역변수 & 지역변수, !global, !default
-* [참조](https://github.com/chiabi/FDS/blob/3rd_FDS/LECTURE/README/0206.md)
+* [참조](https://github.com/chiabi88/FDS/blob/3rd_FDS/LECTURE/README/0206.md)
 	+ 데이터 타입, 연산, 믹스인
 
 ### 변수
