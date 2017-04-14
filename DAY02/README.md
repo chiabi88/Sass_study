@@ -1,5 +1,5 @@
 # DAY02
-(2017-04-03)
+(2017-04-10)
 
 * [Ruby Sass, Node Sass 설치 & 명령어](https://github.com/chiabi88/Sass_study/tree/master/DAY02/sass.md)
 * [npm 로컬 설치, 전역설치](https://nodejs.org/en/blog/npm/npm-1-0-global-vs-local-installation/)
