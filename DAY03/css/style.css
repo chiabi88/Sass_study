@@ -1,0 +1,35 @@
+@font-face {
+  font-family: "YouandiModernTR";
+  font-weight: normal;
+  font-style: normal;
+  src: url("../fonts/Youandi_Modern_TextRegular.eot");
+  src: url("../fonts/Youandi_Modern_TextRegular.eot?#iefix") format("embaded-opentype"), url("../fonts/Youandi_Modern_TextRegular.woff") format("woff");
+}
+
+@font-face {
+  font-family: "YouandiModernTB";
+  font-weight: normal;
+  font-style: normal;
+  src: url("../fonts/Youandi_Modern_TextBold.eot");
+  src: url("../fonts/Youandi_Modern_TextBold.eot?#iefix") format("embaded-opentype"), url("../fonts/Youandi_Modern_TextBold.woff") format("woff");
+}
+
+@font-face {
+  font-family: "YouandiModernHEB";
+  font-weight: normal;
+  font-style: normal;
+  src: url("../fonts/Youandi_Modern_HeadExtraBold.eot");
+  src: url("../fonts/Youandi_Modern_HeadExtraBold.eot?#iefix") format("embaded-opentype"), url("../fonts/Youandi_Modern_HeadExtraBold.woff") format("woff");
+}
+
+.app {
+  font-family: 'YouandiModernTR';
+}
+
+.app-brand {
+  font-family: 'YouandiModernHEB';
+}
+
+.app-slogan {
+  font-family: 'YouandiModernTB';
+}
