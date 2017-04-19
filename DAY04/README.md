@@ -3,4 +3,4 @@
 
 ## Sass Script
 
-*  [내장함수](Function.md)
+*  [내장함수](Functions.md)
