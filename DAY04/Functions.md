@@ -13,14 +13,14 @@
 
 ##### 1. Color Functions
 
-* [색상(hue) 변경](https://github.com/chiabi88/Sass_study/blob/master/DAY04/Function.md) : adjust-hue($color, $degrees)
-* [채도(saturation) 변경]() : saturate($color, $amount), desaturate($color, $amount)
-* [휘도(lightness) 변경]() : lighten($color, $amount), darken($color, $amount)
-* [투명도(opacity) 변경]() : rgba($red, $green, $blue, $alpha), rgba($color, $alpha)
-* [색의 반전]() : invert($color)
-* [grayscale로 변경]() : grayscale($color)
-* [보색으로 변경]() : complement($color)
-* [중간색 취득]() : mix($color1, $color2, [$weight])
+* [색상(hue) 변경](Functions.md#1-1-색상hue-변경) : adjust-hue($color, $degrees)
+* [채도(saturation) 변경](Functions.md#1-2-채도saturation-변경) : saturate($color, $amount), desaturate($color, $amount)
+* [휘도(lightness) 변경](Functions.md#1-3-휘도lightness-변경) : lighten($color, $amount), darken($color, $amount)
+* [투명도(opacity) 변경](Functions.md#1-4-투명도opacity-변경) : rgba($red, $green, $blue, $alpha), rgba($color, $alpha)
+* [색의 반전](Functions.md#1-5-색의-반전) : invert($color)
+* [grayscale로 변경](Functions.md#1-6-grayscale로-변경) : grayscale($color)
+* [보색으로 변경](Functions.md#1-7-보색으로-변경) : complement($color)
+* [중간색 취득](Functions.md#1-8-중간색-취득) : mix($color1, $color2, [$weight])
 
 ##### 1-1. 색상(hue) 변경
 
