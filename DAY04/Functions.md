@@ -11,7 +11,7 @@
 
 > [http://sass-lang.com/documentation/file.SASS_REFERENCE.html#functions](http://sass-lang.com/documentation/file.SASS_REFERENCE.html#functions)
 
-##### 1. Color Functions
+#### 1. Color Functions
 
 * [색상(hue) 변경](Functions.md#1-1-색상hue-변경) : adjust-hue($color, $degrees)
 * [채도(saturation) 변경](Functions.md#1-2-채도saturation-변경) : saturate($color, $amount), desaturate($color, $amount)
@@ -103,3 +103,27 @@ mix(#f00, #00f) => #7f007f
 mix(#f00, #00f, 25%) => #3f00bf
 mix(rgba(255, 0, 0, 0.5), #00f) => rgba(63, 0, 191, 0.75)
 ```
+
+***
+
+#### 2. String Functions
+
+##### 2-1. 따옴표로 묶기
+
+> quote($string)
+```Sass
+quote("foo") => "foo"
+quote(foo) => "foo"
+```
+
+##### 2-1. 따옴표 제거
+
+> unquote($string)
+```Sass
+unquote("foo") => foo
+unquote(foo) => foo
+```
+
+***
+
+#### 3. Number Functions
