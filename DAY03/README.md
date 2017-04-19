@@ -344,6 +344,7 @@ $query: max-width;
 .form {
   $form-width: 640px;
   width: $form-width;
+
   @include media-query($form-width - 10) {
     p::before{
       content: $query;
@@ -367,3 +368,54 @@ $query: max-width;
   }
 }
 ```
+
+#### 벤더 프리픽스
+
+* 가능한 'autoprefixer' > 'compass, bourbon' > '직접 작성' 순으로 한다.
+* autoprefixer는 항상 최신이다.
+* compass, bourbon 벤더 프리픽스 믹스인 모음을 제공한다.
+
+***
+
+#### 참고
+
+* [autoprefixer](https://github.com/postcss/autoprefixer)
+* [postCSS 소개](https://medium.com/@FourwingsY/postcss-%EC%86%8C%EA%B0%9C-727310aa6505)
+* [bourbon](http://bourbon.io/)
+
+##### CLL에서 autoprefixer 사용
+
+```sh
+npm install --global postcss-cli autoprefixer
+postcss *.css --use autoprefixer -d build/
+```
+
+##### bourbon 사용
+
+* [npm bourbon](https://www.npmjs.com/package/bourbon#installing-with-npm-and-using-a-node-based-asset-pipeline)
+
+※ 선행) package.json
+
+* dependencies에 (--save) 설치한다. ( 테스트, 개발 목적이라면 --save-dev )
+
+```sh
+// Command line
+
+npm init --yes 
+// (--yes, -y)는 package.json의 모든 값을 기본값으로 채워 생성하는 플래그
+
+npm install --save bourbon
+```
+
+* Sass 파일에 import한다.
+
+```Sass
+@import "bourbon"
+```
+
+* --include-path옵션으로 bourbon 스타일 시트를 추가해야함
+```sh
+node-sass --include-path node_modules/bourbon/app/assets/stylesheets/ -w -r sass -o css --output-style expanded
+```
+
+
