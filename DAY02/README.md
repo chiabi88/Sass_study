@@ -1,7 +1,7 @@
 # DAY02
 (2017-04-10)
 
-* [Ruby Sass, Node Sass 설치 & 명령어](https://github.com/chiabi88/Sass_study/tree/master/DAY02/sass.md)
+* [Ruby Sass, Node Sass 설치 & 명령어](sass.md)
 * [npm 로컬 설치, 전역설치](https://nodejs.org/en/blog/npm/npm-1-0-global-vs-local-installation/)
 	+ npm install 명령어 설치 옵션 :  
 		- <strong>지역(local)</strong><br/>
@@ -18,7 +18,7 @@
 
 	+ [참조 : 슬쩍 떠보는 npm과 package.json](https://elegantcoder.com/beginning-npm-package/)
 
-* [@extend 보다 믹스인을 사용하자](https://github.com/chiabi88/Sass_study/tree/master/DAY02/extend.md)
+* [@extend 보다 믹스인을 사용하자](extend.md)
 * 웹 상에서 Sass를 css로 컴파일해주는 웹서비스 : [Sassmeister](http://www.sassmeister.com/)
 
 ***
