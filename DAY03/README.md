@@ -373,7 +373,8 @@ $query: max-width;
 
 * 가능한 'autoprefixer' > 'compass, bourbon' > '직접 작성' 순으로 한다.
 * autoprefixer는 항상 최신이다.
-* compass, bourbon 벤더 프리픽스 믹스인 모음을 제공한다.
+* Compass, bourbon 벤더 프리픽스 믹스인 모음을 제공한다. <br>
+ (※ Compass는 LibSass와 호환이 되지 않는다 - [참조](https://sass-guidelin.es/ko/#compass))
 
 ***
 

@@ -134,6 +134,9 @@ p {
   color: green;
 }
 ```
+
+* [참조 : Sass-guideline - 조건문](https://sass-guidelin.es/ko/#section-73)
+
 ***
 ### 2. 반복문
 
@@ -356,6 +359,9 @@ $i: 6;
   width: 4em;
 }
 ```
+
+* [참조 : Sass-guideline - 반복문](https://sass-guidelin.es/ko/#section-74)
+
 ***
 
 ### 3. 함수
