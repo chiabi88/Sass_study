@@ -267,7 +267,7 @@ div {
   border-color: $border;
 }
 
-$values: #ff0000, #00ff00, #00  00ff;
+$values: #ff0000, #00ff00, #0000ff;
 .primary {
   @include colors($values...);
 }

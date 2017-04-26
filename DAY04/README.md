@@ -396,3 +396,5 @@ $gutter-width: 10px;
   width: 240px;
 }
 ```
+
+* [참조: 믹스인, 함수 가변인자 보충](Arglist.md)
