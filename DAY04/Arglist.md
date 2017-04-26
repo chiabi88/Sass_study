@@ -1,4 +1,4 @@
-# 믹스인의 가변 전달인자 보충 내용
+# 믹스인, 함수의 가변 전달인자 보충 내용
 
 * [참조: Sass Multiple Arguments, Lists or Arglist](https://www.sitepoint.com/sass-multiple-arguments-lists-or-arglist/)
 
@@ -74,7 +74,7 @@ linear-gradient( 0deg, blue, green 40%, red );
 $parameters: (true, 42, 'kittens');
 ```
 
-##### 1. 매개 변수 리스트를 기반으로 함수를 호출하는 방법
+##### 1. 매개 변수 리스트를 기반으로 함수를 호출하는 방법 ( 권장하지 않음 )
 
 ```Sass
 $value: dummy(nth($parameters, 1), nth($parameters, 2), nth($parameters, 3));
