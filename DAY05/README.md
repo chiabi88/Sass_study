@@ -125,13 +125,127 @@ CSS에 대한 보수적인 접근방식
 @charset 'utf-8';
 ```
 
+
 #### 4-1-2. 따옴표
 
 문자열에 따옴표를 감쌌는지는 CSS파서에 문제가 되지 않지만 <br>
 대부분의 언어들은 문자열이 따옴표에 둘러싸일 것을 요구하므로 <br>
-Sass 에서 문자열은 언제나 작은 따옴표로(')로 감싸져야한다.
+Sass 에서 문자열은 <strong>언제나 작은 따옴표로(')로 감싸져야한다.</strong>
 
 - 따옴표로 묶지 않으면 색상 이름이 색상으로 처리됨
 - 대부분의 구문 강조기는 따옴표 없는 문자열을 지원하지 못함
 - 전반적인 가독성에 도움이 됨
 - 문자열을 따옴표로 감싸지 않을 적절한 이유가 없음
+
+```Sass
+// Yep
+$direction: 'left';
+
+// Nope
+$direction: left;
+```
+
+> CSS사양에 따라 @charset 지시어는 큰따옴표로 선언해야 유효하지만 <br>
+> Sass는 이를 CSS 컴파일 할 때 처리하므로 @charset에 대해서도 작은 따옴표를 사용하는 것이 안전하다. <br>
+> ([The @charset Rule](https://www.w3.org/TR/css-syntax-3/#charset-rule))
+
+#### 4-1-3. CSS값인 문자열
+
+- CSS 값(CSS 식별자)로 사용될 문자열(initial, sans-serif...)에는 따옴표를 붙이지 않는다.
+- 맵 키와 같은 Sass 자료 유형에 쓰일 문자열은 작은 따옴표를 붙인다.
+
+```Sass
+// Yep
+$font-type: sans-serif;
+
+//Nope
+$font-type: 'sans-serif';
+
+// Okay I guess
+$font-type: unquote('sans-serif');
+```
+
+#### 4-1-4. 따옴표를 포함한 문자열
+
+- 문자열이 하나 이상의 작은 따옴표를 포함하고 있다면 큰 따옴표(")로 문자열을 감싼다. <br>
+(※과도한 문자 이스케이프 대신)
+
+```Sass
+// Okay
+@warn 'You can\'t do that.';
+
+// Okay
+@warn "You can't do that.";
+```
+
+#### 4-1-5. URL
+
+- URL도 위와 같은 이유로 따옴표로 묶여야 함
+```Sass
+// Yep
+.foo {
+  background-image: url('/images/kittens.jpg');
+}
+// Nope
+.foo {
+  background-image: url(/images/kittens.jpg);
+}
+```
+
+### 4-2. 숫자
+
+#### 4-2-1. 0(제로)
+
+- 소수 앞의 0은 표기한다.
+- 숫자 뒤에 0은 표기하지 않는다.
+
+```Sass
+// Yep
+.foo {
+  padding: 2em;
+  opacity: 0.5;
+}
+
+// Nope
+.foo {
+	padding: 2.0em;
+	opacity: .5;
+}
+```
+
+#### 4-2-2. 단위
+
+- 길이를 다룰 때 0은 단위를 가지지 않는다.
+- 숫자에 단위를 추가하려면 숫자에 1 단위를 곱해야한다.
+- 단위를 문자열로 추가하는 것은 좋은 방법이 아니다. (결과물이 문자열이 됨)
+- 값의 단위를 제거하려면 그 종류의 한 단위로 값을 나눠야한다.
+
+```Sass
+// Yep
+$length1: 0;
+
+// Nope
+$length1: 0em;
+
+// ---------------
+
+$vaule: 42;
+
+// Yep
+$length2: $vaule * 1px;
+
+// Nope
+$length2: $vaule + px;
+
+// ---------------
+
+$length_vaule: 42px;
+
+// Yep
+$vaule_result: $length_vaule / 1px;
+
+// Nope
+$vaule_result: str-slice($length_vaule + unqoute(''), 1, 2);
+```
+
+* [참조 : Use lengths, not strings.](http://hugogiraudel.com/2013/09/03/use-lengths-not-strings/)
