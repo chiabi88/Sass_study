@@ -1,9 +1,4 @@
-# DAY04
-(2017-05-)
-
-## Sass Script
-
-### 내장함수
+# 내장함수
 
 * 참조 링크
 
@@ -152,7 +147,7 @@ round(10.6px) => 11px
 
 ##### 3-3. 소숫점 이하 올림
 
-> round($number)
+> ceil($number)
 ```Sass
 ceil(10.4px) => 11px
 ceil(10.6px) => 11px

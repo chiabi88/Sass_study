@@ -3,9 +3,8 @@
 
 * [Sass Guideline : English 1.3](https://sass-guidelin.es/) 리뷰
 
-#### 본문이 너무 길어서 안 읽은 분들을 위해
-- [Too Long; Didn’t Read](https://sass-guidelin.es/#too-long-didnt-read)
-- [너무 길어서 안 읽은 분들을 위해](https://sass-guidelin.es/ko/#section-84)
+#### 요약
+- [Sass Guideline 요약](summary.md)
 
 ## 1. 저자 : Hugo Giraudel
 
@@ -113,6 +112,8 @@ CSS에 대한 보수적인 접근방식
 	padding: 0 1em; 
 }
 ```
+
+* [참조 : CSS Guideline](http://cssguidelin.es/#syntax-and-formatting)
 
 ### 4-1. 문자열
 
@@ -248,4 +249,44 @@ $vaule_result: $length_vaule / 1px;
 $vaule_result: str-slice($length_vaule + unqoute(''), 1, 2);
 ```
 
-* [참조 : Use lengths, not strings.](http://hugogiraudel.com/2013/09/03/use-lengths-not-strings/)
+* [참조 : Use lengths, not strings.](use_lengths.md)
+
+#### 4-2-3. 연산
+
+<strong>최상위 숫자 계산은 항상 괄호로 감싸야 한다.</strong> <br>
+가독성을 향상시키고, Sass가 괄호 안의 수치를 계산하도록 강제하여 일부 예외적인 상황을 방지한다
+
+```Sass
+// Yep
+.foo {
+  width: (100% / 3);
+}
+
+// Nope 
+.foo {
+	width: 100% / 3;
+}
+```
+#### 4-2-4. 매직 넘버
+
+> "매직넘버" : 익명의 숫자 상수를 일컫는 [전통적인 프로그래밍 용어](https://en.wikipedia.org/wiki/Magic_number_(programming)#Unnamed_numerical_constants) <br>
+어쩌다 맞아떨어지지만 논리적 설명과 관련 없는 랜덤 숫자
+
+<strong>매직넘버는 전염병 같은 존재다 피해야한다.</strong> <br>
+만약 왜 작동하는지 합리적인 설명을 찾을 수 없을 경우 예상되는 이유를 충분히 주석을 달아둔다.<br>
+설명이 없으면 다음 개발자는 아무런 사전 정보를 없이 그 값의 논리적인 이유을 알아내야 한다.
+
+```Sass
+/**
+ * 1. 매직 넘버. `.foo`의 상단을 부모에 맞춰 정렬시키기 위해 찾은 값 중 가장
+ * 낮은 값이다. 가능하다면, 적절하게 고쳐야 할 것.
+ */
+.foo {
+	top: 0.327em; /* 1 */
+}
+```
+
+* [참조 : 매직넘버에 대한 CSS-Tricks의 토픽](https://css-tricks.com/magic-numbers-in-css/)
+
+### 4-3. 컬러
+
