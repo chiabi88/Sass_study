@@ -24,19 +24,20 @@ CSS를 완벽한 기능의 프로그래밍 언어로 바꾸는 것이 아니라,
 
 ### 2-1. Ruby Sass 또는 LibSass
 
-[(C/C++로 쓰인)LibSass](https://webdesign.tutsplus.com/articles/getting-to-know-libsass--cms-23114)는 현재 오리지널 Ruby 버전과 거의 근접하게 호환한다. <br>
-2014년에 Ruby Sass와 LibSass 팀은 두 버전간 동기화를 위해 기다리기로 하여, <br>LibSass는 동기화를 위해 활발히 버전을 출시 중이다. <br>
+[(C/C++로 쓰인)LibSass](https://webdesign.tutsplus.com/articles/getting-to-know-libsass--cms-23114)는 현재 오리지널 Ruby 버전과 거의 근접하게 호환한다.  
+2014년에 Ruby Sass와 LibSass 팀은 두 버전간 동기화를 위해 기다리기로 하여,  
+LibSass는 동기화를 위해 활발히 버전을 출시 중이다.  
 일치 되지 않는 부분은 [Sass Compatibility](http://sass-compatibility.github.io/)에 정리되어 있다.
 
-Ruby on Rails 프로젝트라면 Ruby Sass를 사용(LibSass를 선도함). <br>
+Ruby on Rails 프로젝트라면 Ruby Sass를 사용(LibSass를 선도함).  
 비 Ruby 프로젝트일 경우 LibSass 사용. 만약 Node.js를 사용하고 싶다면 [node-sass](https://github.com/sass/node-sass)를 선택
 
 * [참조 : Ruby Sass에서 LibSass로 전향하려는 사람들을 위한 아티클](https://www.sitepoint.com/switching-ruby-sass-libsass/)
 ### 2-2. Sass 또는 SCSS
 
-Sass(전처리기)는 Sass, SCSS라는 두가지 구문을 제공하고 있다. <br>
-처음에는 들여쓰기의 감지를 핵심 특성으로 갖는 Sass라는 구문을 제공했다가 CSS친화적인 SCSS구문을 제공하게 되었다. <br>
-(※ Sass이다. SASS가 아니다.) <br>
+Sass(전처리기)는 Sass, SCSS라는 두가지 구문을 제공하고 있다.  
+처음에는 들여쓰기의 감지를 핵심 특성으로 갖는 Sass라는 구문을 제공했다가 CSS친화적인 SCSS구문을 제공하게 되었다.  
+(※ Sass이다. SASS가 아니다.)  
 동등한 기능을 갖기 때문에 선택은 미관상의 문제일 뿐이다.
 
 * [참조 : Sass와 SCSS 차이점](http://www.sitepoint.com/whats-difference-sass-scss/)
@@ -60,7 +61,7 @@ CSS에 대한 보수적인 접근방식
 
 #### 2-3-3. 후처리기 (Post-Processor)
 
-기존 CSS 문법으로 작성된 것을 해석/처리해서 다시 일반 CSS로 돌려준다. (Autoprefixer가 가장 많이 애용 됨)<br>
+기존 CSS 문법으로 작성된 것을 해석/처리해서 다시 일반 CSS로 돌려준다. (Autoprefixer가 가장 많이 애용 됨)
 
 - [PostCSS](https://github.com/postcss/postcss) : 'postprocessor'라로 불림. 스타일 시트의 '토큰'(셀렉터, 속성 및 값)에 액세스 할 수 있고, Javascript로 여러 종류의 작업을 수행하고 CSS에 결과를 컴파일 할 수 있다. 자바스크립트를 알아야 활용도가 높다.
 	+ [Autoprefixer](https://github.com/postcss/autoprefixer) : PostCss로 구축된 인기있는 프리픽스 라이브러리
@@ -119,7 +120,7 @@ CSS에 대한 보수적인 접근방식
 
 #### 4-1-1. 인코딩
 
-문자 인코딩과 관련된 문제를 피하려면 @charset 지시문을 사용하여 주 스타일 시트에서 UTF-8인코딩을 강제 실행 <br>
+문자 인코딩과 관련된 문제를 피하려면 @charset 지시문을 사용하여 주 스타일 시트에서 UTF-8인코딩을 강제 실행  
 (※ 스타일 시트의 첫번째 요소여야 함)
 
 ```Sass
@@ -129,9 +130,9 @@ CSS에 대한 보수적인 접근방식
 
 #### 4-1-2. 따옴표
 
-문자열에 따옴표를 감쌌는지는 CSS파서에 문제가 되지 않지만 <br>
-대부분의 언어들은 문자열이 따옴표에 둘러싸일 것을 요구하므로 <br>
-Sass 에서 문자열은 <strong>언제나 작은 따옴표로(')로 감싸져야한다.</strong>
+문자열에 따옴표를 감쌌는지는 CSS파서에 문제가 되지 않지만  
+대부분의 언어들은 문자열이 따옴표에 둘러싸일 것을 요구하므로  
+Sass 에서 문자열은 **언제나 작은 따옴표로(')로 감싸져야한다.**
 
 - 따옴표로 묶지 않으면 색상 이름이 색상으로 처리됨
 - 대부분의 구문 강조기는 따옴표 없는 문자열을 지원하지 못함
@@ -146,8 +147,8 @@ $direction: 'left';
 $direction: left;
 ```
 
-> CSS사양에 따라 @charset 지시어는 큰따옴표로 선언해야 유효하지만 <br>
-> Sass는 이를 CSS 컴파일 할 때 처리하므로 @charset에 대해서도 작은 따옴표를 사용하는 것이 안전하다. <br>
+> CSS사양에 따라 @charset 지시어는 큰따옴표로 선언해야 유효하지만  
+> Sass는 이를 CSS 컴파일 할 때 처리하므로 @charset에 대해서도 작은 따옴표를 사용하는 것이 안전하다.  
 > ([The @charset Rule](https://www.w3.org/TR/css-syntax-3/#charset-rule))
 
 #### 4-1-3. CSS값인 문자열
@@ -168,7 +169,7 @@ $font-type: unquote('sans-serif');
 
 #### 4-1-4. 따옴표를 포함한 문자열
 
-- 문자열이 하나 이상의 작은 따옴표를 포함하고 있다면 큰 따옴표(")로 문자열을 감싼다. <br>
+- 문자열이 하나 이상의 작은 따옴표를 포함하고 있다면 큰 따옴표(")로 문자열을 감싼다.  
 (※과도한 문자 이스케이프 대신)
 
 ```Sass
@@ -253,7 +254,7 @@ $vaule_result: str-slice($length_vaule + unqoute(''), 1, 2);
 
 #### 4-2-3. 연산
 
-<strong>최상위 숫자 계산은 항상 괄호로 감싸야 한다.</strong> <br>
+**최상위 숫자 계산은 항상 괄호로 감싸야 한다.**  
 가독성을 향상시키고, Sass가 괄호 안의 수치를 계산하도록 강제하여 일부 예외적인 상황을 방지한다
 
 ```Sass
@@ -269,11 +270,11 @@ $vaule_result: str-slice($length_vaule + unqoute(''), 1, 2);
 ```
 #### 4-2-4. 매직 넘버
 
-> "매직넘버" : 익명의 숫자 상수를 일컫는 [전통적인 프로그래밍 용어](https://en.wikipedia.org/wiki/Magic_number_(programming)#Unnamed_numerical_constants) <br>
+> "매직넘버" : 익명의 숫자 상수를 일컫는 [전통적인 프로그래밍 용어](https://en.wikipedia.org/wiki/Magic_number_(programming)#Unnamed_numerical_constants)  
 어쩌다 맞아떨어지지만 논리적 설명과 관련 없는 랜덤 숫자
 
-<strong>매직넘버는 전염병 같은 존재다 피해야한다.</strong> <br>
-만약 왜 작동하는지 합리적인 설명을 찾을 수 없을 경우 예상되는 이유를 충분히 주석을 달아둔다.<br>
+**매직넘버는 전염병 같은 존재다 피해야한다.**  
+만약 왜 작동하는지 합리적인 설명을 찾을 수 없을 경우 예상되는 이유를 충분히 주석을 달아둔다.  
 설명이 없으면 다음 개발자는 아무런 사전 정보를 없이 그 값의 논리적인 이유을 알아내야 한다.
 
 ```Sass
