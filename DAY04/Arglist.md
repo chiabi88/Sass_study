@@ -1,10 +1,12 @@
-# 믹스인, 함수의 가변 전달인자 보충 내용
+# 믹스인, 함수의 가변 전달인자 보충 내용 (보류 2017-05-10)
 
 * [참조: Sass Multiple Arguments, Lists or Arglist](https://www.sitepoint.com/sass-multiple-arguments-lists-or-arglist/)
 
 ## The variable argument
 
 #### liner-gradient(선형 그래디언트) 믹스인 - 가변인자를 받는 경우
+
+(믹스인에 전달되는 색상점 수가 여러 개일 수 있기 때문에 가변 인수에 대한 적절한 예이다.)
 
 ```Sass
 @mixin linear-gradient($direction, $gradients...) {
@@ -64,7 +66,8 @@ linear-gradient( 0deg, blue, green 40%, red );
 
 ## Multiple arguments
 
-별도의 이름이 지정된 여러개의 인수가 관련없는 인수를 처리할 때 종종 사용된다.
+별도의 이름이 지정된 여러개의 인자가 관련없는 인자를 처리할 때 종종 사용된다.
+하나씩 인자를 전달하거나 리스트나 맵을 사용하여 한꺼번에 인자를 전달할 수 있다.
 
 ```Sass
 @function dummy($a, $b, $c: "default") {
@@ -99,3 +102,7 @@ $parameters: (
 
 $value: dummy($parameters...);
 ```
+
+* 인자 수가 제한되지 않기를 기대할 경우(믹스인에 들어가는 매개변수의 개수를 알 수 없을 때) arglist를 사용한다.
+* 인자 수가 제한될 경우 여러개의 명명 된 인자를 사용한다. (리스트나 맵을 사용하여 한 번에 하나씩 전달할 수 있다.)
+* 만약 믹스인, 함수의 목록을 원하면 list를 사용한다.

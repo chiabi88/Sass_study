@@ -399,4 +399,4 @@ $gutter-width: 10px;
 
 ***
 
-* [참조: 믹스인, 함수 가변인자 보충](Arglist.md)
+* ~[참조: 믹스인, 함수 가변인자 보충](Arglist.md)~
