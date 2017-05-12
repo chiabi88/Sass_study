@@ -90,7 +90,7 @@ $value: dummy(nth($parameters, 1), nth($parameters, 2), nth($parameters, 3));
 $value: dummy($parameters...);
 ```
 
-##### 3. 맵($parameters)를 가변인자로 전달하는 방법
+##### 3. 맵($parameters)를 가변인자로 전달하는 방법 
 Sass 3.3 부터  map 사용 가능, 인수 이름과 일치하는 맵 키를 작성하면 맵에 '...'을 추가하여 맵을 가변인자로 즉시 변환 할 수 있다. Sass는 올바른 순서로 값을 수집한다.
 
 ```Sass
