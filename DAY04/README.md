@@ -96,7 +96,6 @@ if(type === 'ocean'){
 > @if {}
 ```Sass
 // SCSS
-$type: monster;
 p {
   @if 1 + 1 == 2 { border: 1px solid;  }
   @if 5 < 3      { border: 2px dotted; }
