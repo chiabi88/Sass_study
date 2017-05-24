@@ -1,5 +1,4 @@
-# DAY05
-(2017-05-)
+# Sass Guideline 리뷰
 
 * [Sass Guideline : English 1.3](https://sass-guidelin.es/) 리뷰
 

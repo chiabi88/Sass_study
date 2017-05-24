@@ -1,7 +1,4 @@
-# DAY06
-(2017-05-)
-
-## Sassy Starter
+# Sassy Starter 리뷰
 
 * [SassDoc](http://minamarkham.github.io/sassy-starter/docs/)
 * [github](https://github.com/minamarkham/sassy-starter/)
