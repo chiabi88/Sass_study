@@ -18,9 +18,9 @@
 
 ## REFERENCE
 
-> - __[Sass-guideline](REFERENCE/Sass-guideline/README.md)__ │ Sass Guideline 리뷰
-> - __[Sassy-Starter](REFERENCE/Sassy-Starter/README.md)__ │ Sassy Starter 리뷰
-> - __[Susy](REFERENCE/Susy/README.md)__ │ Susy 리뷰
+> - __[Sass-guideline](REFERENCE/Sass-guideline/README.md)__ │ Sass Guideline 리뷰(진행중)
+> - __[Sassy-Starter](REFERENCE/Sassy-Starter/README.md)__ │ Sassy Starter 리뷰(일시 중단)
+> - __[Susy](REFERENCE/Susy/README.md)__ │ Susy 리뷰(진행중)
 
 
 > Sass 가이드라인, Sass doc, package.json, gulp
