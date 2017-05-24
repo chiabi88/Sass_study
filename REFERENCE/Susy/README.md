@@ -1,7 +1,14 @@
-# [Susy](http://susy.oddbird.net/)
+# Susy Doc 리뷰
 
+* [Susy](http://susy.oddbird.net/)
 * [Susy Doc](http://susydocs.oddbird.net/en/latest/)
 
+## INDEX
+
++ 1. [Global Settings](#1-global-settings)
++ 2. [Shorthand](#2-shorthand)
++ 3. [Toolkit](#3-toolkit)
+ 
 ## 1. [Global Settings](http://susydocs.oddbird.net/en/latest/settings/#global-defaults)
 
 ```scss
@@ -106,10 +113,48 @@ $susy: (
   )
 );
 ```
+## 2. Shorthand
 
-## 2. Toolkit
+임의의 설정을 함수와 믹스인에 쉽게 전달하기 위한 간단한 구문을 제공함
 
-### 2-1. [[mixin] span](http://susydocs.oddbird.net/en/latest/toolkit/#span-mixin)
+### 2-1. Overview : `$span`, `$grid`, `keywords`
+
+#### `$span`
+> 임의의 길이 또는 span될 열을 나타내는 단위가 없는 숫자  
+  세부사항은 전달되는 기능 또는 믹스인에 따라 달라짐
+
+#### `$grid`
+> Columns 설정, Gutters 와 Column Width 옵션 설정으로 구성  
+
+```scss
+// 12 컬럼 그리드 
+$grid: 12;
+
+// 1/3 비율의 거터를 가지는 12 컬럼 그리드
+$grid: 12 1/3;
+
+// 60px의 컬럼과 10px의 커터를 가지는 12 컬럼 그리드
+$grid: 12 (60px 10px);
+
+//
+$grid: (1 2 3 2 1) 0.25; 
+```
+
+#### `$keywords`
+
+### 2-2. Layout : `$grid`, `keywords`
+
+
+### 2-3. Span : `<span> at <location> of <layout>`
+>  
+
+## 3. Toolkit
+
+shorthand 구문 기반으로 만들어짐
+
+### 3-1. [[mixin] span](http://susydocs.oddbird.net/en/latest/toolkit/#span-mixin)
+
+span($span) {@content}
 
 #### Arbitrary Widths : @include span(<width>)
 `@include span(25%)`
@@ -176,3 +221,38 @@ $susy: (
 .wider { width: 27.5%; }
 ```
 #### Other Settings
+> 전체 키워드를 통해 전체 context를 확장할 수 있다.  
+> `break|nobreak`: 이전 float을 지우고 새로운 행을 시작할 지 결정  
+> `no-gutters`: 개별 span에서 거터 출력을 제거  
+> `border-box|content-box` : box-sizing 출력 변경  
+> 기타 전역 설정 변경 가능
+
+```scss
+// grid span
+.item { @include span(isolate 4 at 2 of 8 (4em 1em) inside rtl break); }
+
+// output
+.item {
+  clear: both;
+  float: right;
+  width: 50%;
+  padding-left: .5em;
+  padding-right: .5em;
+  margin-left: 25%;
+  margin-right: -100%;
+}
+```
+
+### 3-2. [[fuctions] span](http://susydocs.oddbird.net/en/latest/toolkit/#span-function)
+
+span($span)
+
+> span 믹스인과 동일하지만 span 폭 값만 반환함
+
+```scss
+.item {
+  width: span(2);
+  margin-left: span(3 wide);
+  margin-right: span(1) + 25%;
+}
+```
