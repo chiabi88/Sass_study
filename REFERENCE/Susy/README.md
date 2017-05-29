@@ -5,11 +5,44 @@
 
 ## INDEX
 
-+ 1. [Global Settings](#1-global-settings)
-+ 2. [Shorthand](#2-shorthand)
-+ 3. [Toolkit](#3-toolkit)
+1. [Global Settings](#1-global-settings)
+2. [Shorthand](#2-shorthand)
+3. [Toolkit](#3-toolkit)
  
-## 1. [Global Settings](http://susydocs.oddbird.net/en/latest/settings/#global-defaults)
+Susy는 Sass의 **map** 타입 또는 **Shorthand Syntax(단축구문)**과 같은 문법을 사용하여 settings(설정값)을 정의할 수 있음  
+이 두 정의는 서로 바꿔서 사용할 수 있다.(호환성)
+
+```scss
+// $susy 변수에 map 형식으로 작성
+$susy: (
+  columns: 12,
+  gutters: 1/4,
+  math: fluid,
+  output; float,
+  gutter-positino: inside,
+);
+
+// $shorthand 변수에 인수만 전달
+$shorthand: 12 1/4 fluid float inside;
+```
+
+두 형식은 함수나 믹스인에 단일 인수로 전달 될 수 있고, 맵은 Shorthand의 일부로 사용할 수 있움
+
+```scss
+$susy: (
+  columns: 12,
+  gutters: .25,
+  math: fluid,
+);
+
+@include layout($susy float inside);
+```
+
+## 1. Global Settings
+
+글로벌 기본값을 설정하거나 필요한 경우 개벌적인 layout map을 사용하여 기본 설정을 구성할 수 있다.
+
+### 1-1. [Global Defaults](http://susydocs.oddbird.net/en/latest/settings/#global-defaults)
 
 ```scss
 /*
@@ -113,6 +146,44 @@ $susy: (
   )
 );
 ```
+
+### 1-2. [[Function] Layout](http://susydocs.oddbird.net/en/latest/settings/#layout)
+
+layout($layout)
+
+> Susy의 **layout**은 설정값을 병합적으로 구성할 수 있음, map 타입이나 shorthand로 사용할 수 있음.
+
+※ 아래는 값을 저장만 한 것이지 설정한 것은 아님. 변수에 저장된 설정 값을 결합하는 때 유용하게 사용 될 수 있음.
+
+```scss
+// 함수를 사용하여 설정값 저장
+$map: layout(auto 12 0.25 inside fluid isolate);
+
+// map 타입으로 설정값 저장
+$map:(
+  container: auto,
+  columns: 12,
+  gutters: 0.25,
+  gutter-position: inside,
+  math: fluid,
+  output: isolate,
+);
+```
+
+※ 구성값 병합 시 주의할 점
+
+```scss
+
+```
+
+```scss
+
+```
+
+```scss
+
+```
+
 ## 2. Shorthand
 
 임의의 설정을 함수와 믹스인에 쉽게 전달하기 위한 간단한 구문을 제공함
@@ -150,7 +221,7 @@ $grid: (1 2 3 2 1) 0.25;
 
 ## 3. Toolkit
 
-shorthand 구문 기반으로 만들어짐
+**shorthand** 구문 기반으로 만들어짐
 
 ### 3-1. [[mixin] span](http://susydocs.oddbird.net/en/latest/toolkit/#span-mixin)
 
@@ -256,3 +327,7 @@ span($span)
   margin-right: span(1) + 25%;
 }
 ```
+
+***
+
+* [Susy Tutorial (video)](https://leveluptutorials.com/tutorials/susy-tutorials)
