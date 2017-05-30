@@ -170,18 +170,26 @@ $map:(
 );
 ```
 
-※ 구성값 병합 시 주의할 점
+※ 구성값 병합 시 주의할 점 : 속성값만 저장된 변수를 사용하여 layout 믹스인에 전달하는 것은 문법에 어긋남  
+layout 함수에 인자로 기본 구성값을 전달하여 반환 된 것을 사용하는 것은 가능함
 
 ```scss
-
+// 아래는 error가 발생하여 동작하지 않음
+$short: 12 .25 inside;
+@include layout($short fluid no-gutters);
 ```
 
 ```scss
-
+// layout 함수를 통해 저장된 값을 전달하는 것이 가능
+$map: layout(12 .25 inside);
+@include layout($map fluid no-gutters);
 ```
 
 ```scss
-
+// 속성값만 저장된 변수를 layout 믹스인에 전달하면 error 발생
+$map1: 13 static;
+$map2: (6em 1em) inside;
+@include layout($map1 $map2);
 ```
 
 ## 2. Shorthand
