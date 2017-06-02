@@ -4,7 +4,7 @@
 * [Susy Doc](http://susydocs.oddbird.net/en/latest/)
 * [FDS yamoo9](https://github.com/chiabi88/FDS/blob/3rd_FDS/REFERENCES/Sass__Susy.md)
 
-**Susy** 는 사용자가 복잡하지 않은 **math(레이아웃 계산방식)방식** 으로  
+**Susy** 는 사용자가 복잡하지 않은 **math(레이아웃 계산)방식** 으로  
 쉽게 그리드 시스템을 만들 수 있도록 도와주는 도구 :smile::+1:
 
 ## Grid Layout 기본 속성, 용어
