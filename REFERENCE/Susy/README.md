@@ -20,9 +20,9 @@
 
 ## INDEX
 
-1. [Global Settings](#1-global-settings)
-2. [Shorthand](#2-shorthand)
-3. [Toolkit](#3-toolkit)
+1. [Global Settings](1_Global-Settings.md)
+2. [Shorthand](2_Shorthand.md)
+3. [Toolkit](3_Toolkit.md)
  
 Susy는 Sass의 **map** 타입 또는 **Shorthand Syntax(단축구문)** 과 같은 문법을 사용하여 settings(설정값)을 정의할 수 있음  
 이 두 정의는 서로 바꿔서 사용할 수 있다.(호환성)

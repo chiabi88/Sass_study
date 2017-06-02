@@ -1,4 +1,4 @@
-## 2. Shorthand
+## 2. [Shorthand](http://susydocs.oddbird.net/en/latest/shorthand/)
 
 임의의 설정을 함수와 믹스인에 쉽게 전달하기 위한 간단한 구문을 제공함
 
