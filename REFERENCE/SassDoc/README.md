@@ -13,12 +13,12 @@ $ npm install sassdoc -g
 
 ## SassDoc 주석
 
-[주석설명](annotations.md)
+※ [주석설명](annotations.md)
 
 SassDoc은 [JSDoc](http://usejsdoc.org/)에서 크게 영향을 받았다.  
 문서화되어야 하는 각 항목(변수, 함수, 믹스인 등) 앞에 `///` 주석을 이용하여 정보를 제공(e.g `@author`, `@example`, ...) 한다.  
 
- 다음은 `$size` 믹스인에 SassDoc을 적용한 예이다.
+다음은 `$size` 믹스인에 SassDoc을 적용한 예이다.
 
 ```scss
 /// 요소의 크기(width, height)를 한 줄로 설정하도록 도와주는 믹스인
