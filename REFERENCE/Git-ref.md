@@ -39,6 +39,7 @@
 
 ```sh
 // ※ 각 브랜치에는 독립된 커밋이 있는 상태(작업 내역이 나뉘어 있는 상태)
+
 > git merge newBranch master // master가 두 부모가 있는 커밋을 가리킴
 
 > git merge master newBranch 
@@ -49,5 +50,36 @@
 
 커밋들을 모아 복사한 뒤 다른 곳에 둠, 저장소의 커밋 로그와 이력을 깨끗하게 함  
 (커밋들의 흐름을 보기 좋게 한 줄로 만든다)
+
+```sh
+// ※ 각 브랜치에는 독립된 커밋이 있는 상태(작업 내역이 나뉘어 있는 상태)
+// git checkout newBranch
+> git rebase master // newBranch에서의 작업을 master 브랜치 위로 직접 옮김
+
+// git checkout master
+> git rebase newBranch // master 브랜치를 newBrach로 리베이스
+```
+### 1-5. Git에서 작업 되돌리기 - `git reset`, `git revert`
+
+#### 1-5-1. Git 리셋 (reset)
+
+브랜치로 하여금 이전 커밋을 가리키도록 이동시키는 방식  
+(애초에 커밋하지 않은 것 처럼, _히스토리를 고쳐쓴다_.)  
+로컬 브랜치에서 사용 (다른 사람이 작업하는 리모트 브랜치에는 쓸 수 없음)
+
+```sh
+> git reset HEAD~1
+```
+
+> HEAD : 마지막 커밋 스냅샷, 다음 커밋의 부모 커밋
+
+#### 1-5-2. Git 리버트 (revert)
+
+변경분을 되돌리고 되돌린 내용을 다른 사람과 _공유_
+리모트 브랜치에서 사용
+
+```sh
+> git revert HEAD
+```
 
 ### ※ 워킹 디렉토리 파일까지 안녕하고 싶다면... `git reset --hard HEAD`
