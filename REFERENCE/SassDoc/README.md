@@ -51,26 +51,26 @@ SassDoc을 시작하는 첫 번째 행은 설명으로 시작한다. (다른 주
 --- | --- | ---
 설명 범위 | 설명 범위 | -
 설명 | 문서화 된 항목에 대한 설명 | -
-[@access](#access) | 접근 여부(공개, 비공개) | -
-[@alias](#alias) | 다른 항목의 별명 | -
-[@author](#author) | 작성자 | -
-[@content](#content) | 믹스인 내용 설명 | -
-[@deprecated](#deprecated) | 파기 예정 | -
-[@example](#example) | 예시 | -
-[@group](#group) | 그룹 설정 | -
-[@ignore](#ignore) | 무시 사항 | -
-[@link](#link) | 관련 링크 | @source
-[@name](#name) | 이름 | -
-[@output](#output) | 출력 사항 | -
-[@parameter](#parameter) | 믹스인 또는 함수의 매개변수 | @param, @arg, @argument
-[@property](#property) | 속성 | @prop
-[@require](#require) | 요구 사항 | @requires
-[@return](#return) | 함수 반환 값 | @returns
-[@see](#see) | 관련 자원 | -
-[@since](#since) | 변경 내역 | -
-[@throw](#throw) | 예외 사항 | @throws, @exception
-[@todo](#todo) | 관련된 작업 | -
-[@type](#type) | 변수 유형 | -
+[@access](annotations.md#access) | 접근 여부(공개, 비공개) | -
+[@alias](annotations.md#alias) | 다른 항목의 별명 | -
+[@author](annotations.md#author) | 작성자 | -
+[@content](annotations.md#content) | 믹스인 내용 설명 | -
+[@deprecated](annotations.md#deprecated) | 파기 예정 | -
+[@example](annotations.md#example) | 예시 | -
+[@group](annotations.md#group) | 그룹 설정 | -
+[@ignore](annotations.md#ignore) | 무시 사항 | -
+[@link](annotations.md#link) | 관련 링크 | @source
+[@name](annotations.md#name) | 이름 | -
+[@output](annotations.md#output) | 출력 사항 | -
+[@parameter](annotations.md#parameter) | 믹스인 또는 함수의 매개변수 | @param, @arg, @argument
+[@property](annotations.md#property) | 속성 | @prop
+[@require](annotations.md#require) | 요구 사항 | @requires
+[@return](annotations.md#return) | 함수 반환 값 | @returns
+[@see](annotations.md#see) | 관련 자원 | -
+[@since](annotations.md#since) | 변경 내역 | -
+[@throw](annotations.md#throw) | 예외 사항 | @throws, @exception
+[@todo](annotations.md#todo) | 관련된 작업 | -
+[@type](annotations.md#type) | 변수 유형 | -
 
 
 ## SassDoc 실행
