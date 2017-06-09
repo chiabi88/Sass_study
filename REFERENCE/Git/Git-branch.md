@@ -1,4 +1,4 @@
-# Git 문제 해결방법
+# Git 브랜치
 
 + [Git 브랜치 배우기](http://learnbranch.urigit.com/)
 
@@ -7,13 +7,12 @@
 ### 1-1. Git 커밋 - `git commit`
 
 커밋은 Git 저장소에 로컬 디렉토리에 있는 모든 파일에 대한 **스냅샷** 을 기록하는 것  
-저장소의 _이전 버전과 다음 버전의 **변경내역("delta")**_ 을 저장 (전체를 복사하는 것이 아니라 가볍다)
+저장소의 _이전 버전과 다음 버전의 **변경내역("delta")** 을 저장하는 것이 아님_  
+(전체를 복사하는 것이 아니라 가볍다)
 
 ```sh
 > git commit
 ```
-
-> `resolving deltas` :  저장소를 복제(clone) 하려면 그 모든 변경분(delta)를 풀어내야함. 그 명령행 결과
 
 ### 1-2. Git 브랜치 - `git branch [new branch name]`
 
