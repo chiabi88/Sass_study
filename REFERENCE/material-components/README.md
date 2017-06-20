@@ -51,12 +51,63 @@ npm install --save @material/button @material/card @material/textfield @material
 모든 컴포넌트는 [package](https://github.com/material-components/material-components-web/tree/master/packages) 디렉토리에서 찾을 수 있다.  
 각각 설치 및 사용법을 설명한 READEME 문서가 있음
 
-### 1-2. Building project
+### 1-4. 컴포넌트 인클루딩
 
-프로젝트 설정
+#### JavaScript
+
+Webpack또는 SystemJS와 모듈 로더를 사용하여 JS 모듈을 로드하는 경우 필요한 모든 컴포넌트를  
+matreial-components-web에서 가져와서 그대로 사용할 수 있다.
+
+자세한 내용은 필요시에 [링크를 참고](https://github.com/material-components/material-components-web#javascript) 
+
+#### CSS
+
+스타일을 포함하는 모든 컴포넌트는 dist / mdc.COMPONENT.css에서 제공되며  
+dist / mdc.COMPONENT.min.css의 보완 된 축소 버전도 제공
+
+각 컴포넌트에는 애플리케이션의 Sass에 포함 시킬 수 있는 Sass 소스 파일이 함께 제공 됨.
+
+```scss
+// 전체 라이브러리를 사용할 경우
+@import "material-components-web/material-components-web";
+
+// 개별적으로 컴포넌트 / 믹스인을 사용할 경우
+@import '@material/checkbox';
+@import '@material/typography';
+@import '@material/elevation/mixins'; // Mixins for elevation.
+```
+
+### 1-5. 데모 실행
+
+repo(repository) 설정
+
+```sh
+git clone https://github.com/material-components/material-components-web.git && cd material-compontents-web
+
+npm i
+```
+
+개발 서버 실행
+
+```sh
+npm run dev
+```
+
+http://localhost:8080 열기
+
+## 2. Building project
 
 [참조](https://github.com/material-components/material-components-web/blob/master/docs/getting-started.md)
 
+## 3. 브라우저 지원
+
++ Chrome
++ Safari
++ Firefox
++ **IE 11** / Edge
++ Opera
++ Mobile Safari
++ Chrome on Android
 
 ***
 
@@ -66,7 +117,9 @@ npm install --save @material/button @material/card @material/textfield @material
 
 ***
 
-### 추가글
+## 추가글
+
+### 1. package.json
 
 #### package.json 의존성 명시
 
@@ -116,3 +169,40 @@ webpack을 실행하는 데 컴파일 진행 상태를 표시할 거고 상태 �
 실행할 때는 `npm run build`로 실행한다.
 
 [참고 : npm-scripts](https://docs.npmjs.com/misc/scripts)
+
+### 2. npm install (alias : npm i)
+
+[npm-install](https://docs.npmjs.com/cli/install)
+
+```sh
+npm install (with no args, in package dir)
+npm install [<@scope>/]<name>
+npm install [<@scope>/]<name>@<tag>
+npm install [<@scope>/]<name>@<version>
+npm install [<@scope>/]<name>@<version range>
+npm install <git-host>:<git-user>/<repo-name>
+npm install <git repo url>
+npm install <tarball file>
+npm install <tarball url>
+npm install <folder>
+```
+
+#### 2-1. npm install (in package directory, no arguments)
+
+기본적으로 package.json에 의존성으로 나열된 모든 모듈을 로컬 node_modules 폴더에 설치
+
+(-g, --global 옵션을 명령에 추가한) 전역모드에서는 현재 패키지 컨텍스트를 전역 패키지로 설치함
+
+#### 2-2. npm install [<@scope>/]<name>
+
+대부분의 경우 npm 레지스트리에 최신으로 태그가 지정된 모듈 버전을 설치함
+
+npm install을 지정된 패키지를 기본적으로 **dependencies** 에 저장함
+
+`<scope>`는 선택사항, 패키지는 지정된 범위와 연결된 레지스트리에서 다운로드 됨
+
+```sh
+npm install gulp-cli
+npm install node-sass --save-dev
+npm install @material/checkbox
+```
