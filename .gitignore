@@ -10,8 +10,8 @@ ehthumbs_vista.db
 Desktop.ini
 
 # 사용자 정의
-node_modules
-**/node_modules
+node_modules/
+**/node_modules/
 
 # Recycle Bin used on file shares
 $RECYCLE.BIN/
