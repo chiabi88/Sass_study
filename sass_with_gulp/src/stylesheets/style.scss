@@ -1,0 +1,12 @@
+body {
+  color: rgb(255,255,255);
+  background: rgb(0,0,0);
+}
+
+.main-con {
+  width: 1200px;
+  margin: 0 auto;
+  .main-con__inner {
+    padding: 0 20px;
+  }
+}
