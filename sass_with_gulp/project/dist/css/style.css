@@ -8,8 +8,17 @@ body {
   margin: 0 auto;
 }
 
-.main-con .main-con__inner {
+.main-con__inner {
   padding: 0 20px;
+}
+
+.main-con--fade-out {
+  opacity: 0;
+}
+
+.sub-con {
+  margin: 0;
+  content: 'dddd';
 }
 
 /*# sourceMappingURL=../maps/style.css.map */
