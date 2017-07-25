@@ -1,6 +1,7 @@
+// Modules 호출
 var gulp = require('gulp');
 
-// gulp 플러그인 호출
+// gulp 패키지 모듈 호출
 var sass = require('gulp-sass'),
     autoprefixer = require('gulp-autoprefixer'),
     sourcemaps = require('gulp-sourcemaps'),
@@ -8,14 +9,14 @@ var sass = require('gulp-sass'),
 
 /**
  * ========================
- * 경로 담을 객체
+ * path : 경로 담을 객체
  * =======================
  */
 var src = 'project/src/';
 var dist = 'project/dist/';
 var path = {
-  js: src + '/js/**/*.js',
-  scss: src + '/stylesheets/**/*.scss'
+  js: src + 'js/**/*.js',
+  scss: src + 'stylesheets/**/*.scss'
 };
 
 /**
@@ -51,11 +52,10 @@ var sassdocOptions = {
 gulp.task('sass', function() {
   return gulp.src(path.scss)
              .pipe(sourcemaps.init())
+             .pipe(autoprefixer(autoprefixerOptions))
              .pipe(sass(sassOptions).on('error', sass.logError))
              .pipe(sourcemaps.write('../maps'))
-             .pipe(autoprefixer(autoprefixerOptions))
-             .pipe(gulp.dest(dist + '/css'))
-             .resume();
+             .pipe(gulp.dest(dist + 'css'))
 });
 
 gulp.task('sassdoc', function() {
