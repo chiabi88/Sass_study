@@ -162,6 +162,12 @@ gulp.src([
 > **wild card**  
 파일을 지정할 때, 구체적인 이름 대신에 여러 파일을 동시에 지정할 목적으로 사용하는 특수 기호. `＊', `？' 따위.
 
+> **※ globs 문법이란?**  
+```javascript
+// 1개 이상 설정할 경우 배열(Array) 문법을 사용한다.
+gulp.src(['*.js', '!b*.js', 'bad.js']);
+```
+
 #### options
 
 + Type: `Object`

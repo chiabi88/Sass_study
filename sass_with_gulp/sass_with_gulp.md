@@ -1,4 +1,9 @@
-+ [A Simple Gulp’y Workflow For Sass](https://www.sitepoint.com/simple-gulpy-workflow-sass/)
-+ [Gulp 사용법 #4 (gulp-sass, gulp-sourcemaps)](http://webclub.tistory.com/470)
-
-[gulp-sass](https://github.com/dlmanning/gulp-sass)
++ [gulp-sass](https://github.com/dlmanning/gulp-sass)
+  - [A Simple Gulp’y Workflow For Sass](https://www.sitepoint.com/simple-gulpy-workflow-sass/)
+  - [Gulp 사용법 #4 (gulp-sass, gulp-sourcemaps)](http://webclub.tistory.com/470)
++ [gulp-autoprefixer](https://github.com/sindresorhus/gulp-autoprefixer)
++ [gulp.spritesmith](https://github.com/twolfson/gulp.spritesmith)
+  - [[걸프(Gulp)] 5. gulp.spritesmith (이미지스프라이트 만들기)](http://recoveryman.tistory.com/301)
++ [Browsersync](https://browsersync.io/docs/gulp)
+  - [Gulp 사용법 #6 (Browser-sync)](http://webclub.tistory.com/473)
+  - [크로스 브라우저 테스트에 편리한 Browsersync](https://blog.outsider.ne.kr/1216)
