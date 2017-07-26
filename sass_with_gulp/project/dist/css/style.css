@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css?family=Teko:400,700");
 /*
 SCSS variables are information about icon's compiled state, stored under its original file name
 
@@ -82,26 +83,186 @@ table {
   border-spacing: 0;
 }
 
+/* setting */
+.show-grid {
+  position: relative;
+}
+
+.show-grid::before,
+.show-grid::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  height: 100vh;
+}
+
+.show-grid::before {
+  z-index: 10000;
+  left: 0;
+  width: 100%;
+  background: linear-gradient(180deg, transparent 23px, #0cf 23px);
+  background-size: 1px 24px;
+}
+
+.show-grid::after {
+  z-index: 10010;
+  left: 50%;
+  width: 99.96%;
+  background: -webkit-gradient(linear, left top, right top, color-stop(0, transparent), color-stop(0, rgba(251, 137, 137, 0.35)), color-stop(8.33%, rgba(251, 137, 137, 0.35)), color-stop(8.33%, transparent));
+  background: linear-gradient(90deg, transparent 0, rgba(251, 137, 137, 0.35) 0, rgba(251, 137, 137, 0.35) 8.33%, transparent 8.33%);
+  background-size: 8.33% 1px;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+html {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
 body {
-  color: white;
-  background: black;
+  font-family: 'Teko', sans-serif;
+  color: black;
+  background: #ffffff;
+}
+
+a {
+  color: inherit;
+}
+
+a:active, a:link {
+  text-decoration: none;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 143px;
+  text-align: center;
+  color: #d4c0cc;
+  background: #583d4e;
+}
+
+header .logo {
+  margin-top: 45px;
+  font-size: 3.157rem;
+}
+
+.contents {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding-top: 143px;
+  min-height: 800px;
+}
+
+.sub-menu {
+  -webkit-box-flex: 0.16667;
+      -ms-flex-positive: 0.16667;
+          flex-grow: 0.16667;
+  padding: 20px;
+  color: #583d4e;
+  background: #d4c0cc;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.sub-menu .sub-menu__title {
+  font-size: 2.369rem;
+}
+
+.sub-menu .sub-menu__list {
+  margin-top: 20px;
+  font-size: 1.333rem;
+  line-height: 1.5;
+}
+
+.sub-menu .sub-menu__list a:hover {
+  color: black;
 }
 
 .main-con {
-  width: 1200px;
-  margin: 0 auto;
+  padding: 20px;
+  -webkit-box-flex: 0.83333;
+      -ms-flex-positive: 0.83333;
+          flex-grow: 0.83333;
 }
 
-.main-con__inner {
-  padding: 0 20px;
+.main-con .main-con__title {
+  font-size: 2.369rem;
 }
 
-.main-con--fade-out {
-  opacity: 0;
+.main-sprite--apple {
+  background-image: url(../images/sprites/sprite.png);
+  background-position: 0px 0px;
+  width: 50px;
+  height: 50px;
 }
 
-.sub-con {
-  margin: 10px;
+.main-sprite--asparagus {
+  background-image: url(../images/sprites/sprite.png);
+  background-position: -50px 0px;
+  width: 50px;
+  height: 50px;
+}
+
+.main-sprite--avocado {
+  background-image: url(../images/sprites/sprite.png);
+  background-position: 0px -50px;
+  width: 50px;
+  height: 50px;
+}
+
+.main-sprite--baby-bottle {
+  background-image: url(../images/sprites/sprite.png);
+  background-position: -50px -50px;
+  width: 50px;
+  height: 50px;
+}
+
+.main-sprite--bacon {
+  background-image: url(../images/sprites/sprite.png);
+  background-position: -100px 0px;
+  width: 50px;
+  height: 50px;
+}
+
+.main-sprite--banana-split {
+  background-image: url(../images/sprites/sprite.png);
+  background-position: -100px -50px;
+  width: 50px;
+  height: 50px;
+}
+
+.main-sprite--coffee-pot {
+  background-image: url(../images/sprites/sprite.png);
+  background-position: 0px -100px;
+  width: 50px;
+  height: 50px;
+}
+
+.main-con__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.main-con__list li {
+  -ms-flex-preferred-size: 1;
+      flex-basis: 1;
+}
+
+.main-con__list li div {
+  height: 50x;
+}
+
+footer {
+  font-size: 1.333rem;
+  padding: 40px 20px;
+  color: #583d4e;
+  background: black;
 }
 
 /*# sourceMappingURL=maps/style.css.map */

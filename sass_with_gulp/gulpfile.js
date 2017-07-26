@@ -164,7 +164,7 @@ gulp.task('sassdoc', function() {
  * -------------------------------
  */
 // task : IMG 파일 minify해서 dist 폴더에 넣기 
-gulp.task('images',['sprite'], function() {
+gulp.task('images', ['sprite'], function() {
   return gulp.src([SRC.IMAGES, '!' + DIR.SRC + '/images/sprites'])
              .pipe(imagemin())
 			       .pipe(gulp.dest(DIST.IMAGES));
@@ -174,7 +174,7 @@ gulp.task('images',['sprite'], function() {
 gulp.task('sprite', function() {
 	var spriteData = gulp.src(DIR.SRC + '/images/sprites/*.png')
                        .pipe( spritesmith({
-                         'imgName' : 'sprite.png',
+                         'imgName' : '../images/sprites/sprite.png',
                          'cssName' : '_sprite.scss'
                        }) );
 
@@ -196,6 +196,7 @@ gulp.task('watch', function() {
   gulp.watch(SRC.CSS, ['sass']);
   gulp.watch(SRC.HTML, ['html']);
   gulp.watch(SRC.IMAGES, ['images']);
+  gulp.watch(DIR.SRC + '/images/sprites/*.png', ['sprite']);
 });
 
 // task : browserSync
@@ -204,4 +205,4 @@ gulp.task('browserSync', ['html', 'js', 'sass'], function () {
 });
 
 // task : default | 'gulp'를 실행하면 sass, watch task를 실행함
-gulp.task('default', ['browserSync','watch']);
+gulp.task('default', ['clean', 'browserSync','images', 'watch']);

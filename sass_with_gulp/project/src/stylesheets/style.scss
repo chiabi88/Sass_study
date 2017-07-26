@@ -1,24 +1,196 @@
 @charset 'utf-8';
 
+@import url('https://fonts.googleapis.com/css?family=Teko:400,700');
+
 @import 'sprite';
 @import './base/reset';
 
+/* setting */
+$base-font-size: 16px !default;
+// 글줄 사이(행간) 비율
+$leading-scale: 1.5;
+// 글줄 사이(행간) 간격
+$leading: $base-font-size * $leading-scale;
+
+$typo-size-h1: 3.157rem;
+$typo-size-h2: 2.369rem;
+$typo-size-h3: 1.777rem;
+$typo-size-h4: 1.333rem;
+$typo-size-small: 0.75rem;
+
+$main-color: #583d4e;
+$main-light-color: lighten($main-color, 50%);
+$main-dark-color: darken($main-color, 50%);
+
+$border-color: rgb(238,238,238);
+
+// --------------------------------------------
+// 그리드 시스템 설계(Grid System Design)
+// --------------------------------------------
+// 그리드 시스템 가이드라인 토글 클래스
+$toggle-classname: 'show-grid';
+// 그리드 시스템 가이드라인 높이
+$guide-height: 100vh;
+// 컬럼의 총 개수
+$columns: 12;
+// 컬럼 폭
+$column-width: 8.33%;
+// 컬럼 가이드 색상
+$column-color: rgba(#fb8989, 0.35);
+// 거터 방향
+// before, after, split, no-gutter, inside
+$gutter-position: 'split';
+// 거터 간격
+$gutter-width: 0;
+$half-gutter-width: $gutter-width/2;
+// 페이지 총 폭의 길이를 구하는 함수
+// 70px * 12 + 20px * 12
+// ($column-width + $gutter-width) * $columns
+$page-width: ($column-width + $gutter-width) * $columns;
+
+// 컬럼 개수에 따른 폭(width) 구하는 공식
+// = 컬럼_폭 × 컬럼_개수 + 거터_폭(합) * (컬럼_개수 - 1)
+// calc( 70px * $i + (10px * 2) * ($i - 1) )
+@function column-width($n) {
+  @return $column-width * $n + $gutter-width * ($n - 1);
+}
+// 옵셋 개수에 따른 마진(margin-left) 구하는 공식
+// = 컬럼_폭 × 컬럼_개수 + (컬럼_폭 + 거터_절반_폭)
+@function offset-width($n) {
+  @return column-width($n) + ($gutter-width + $half-gutter-width);
+}
+// Isolate Floating 방법 사용 시, 사용되는 order-width() 함수
+// 오더(순서)에 따른 폭 구하는 공식
+// 거터_절반_폭 + ( (거터_폭 + 컬럼_폭) * (순서 - 1) )
+@function order-width($n) {
+  @return $half-gutter-width + ( ($gutter-width + $column-width) * ($n - 1) );
+}
+// Toggle Grid Module
+// 브라우저 뷰에 그리드 가이드를 토글(보임/감춤)하는 스타일 모듈
+// .show-grid
+.#{$toggle-classname} {
+  position: relative;
+}
+.#{$toggle-classname}::before,
+.#{$toggle-classname}::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  height: $guide-height;
+}
+.#{$toggle-classname}::before {
+  // 지역 변수
+  $leading-limit: $leading - 1;
+
+  z-index: 10000;
+  left: 0;
+  width: 100%;
+  background: linear-gradient(
+    180deg,
+    transparent $leading-limit,
+    #0cf $leading-limit
+  );
+  background-size: 1px $leading;
+}
+.#{$toggle-classname}::after {
+  $full-width: $column-width + $gutter-width;
+  z-index: 10010;
+  left: 50%;
+  width: $page-width;
+  background: linear-gradient(
+    90deg,
+    transparent $half-gutter-width,
+    $column-color $half-gutter-width,
+    $column-color $column-width + $half-gutter-width,
+    transparent $column-width + $half-gutter-width
+  );
+  background-size: $full-width 1px;
+  transform: translateX(-50%);
+}
+// ------------------------------------------
+
+html {
+  font-size: 1rem;
+  line-height: 1.5;
+}
 body {
-  color: rgb(255,255,255);
-  background: rgb(0,0,0);
+  font-family: 'Teko', sans-serif;
+  color: $main-dark-color;
+  background: #ffffff;
+}
+a {
+  color: inherit;
+  &:active,
+  &:link {
+    text-decoration: none;
+  }
+}
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 143px;
+  text-align: center;
+  color: $main-light-color;
+  background: $main-color;
+  .logo {
+    margin-top: 45px;
+    font-size: $typo-size-h1;
+  }
+}
+.contents {
+  display: flex;
+  padding-top: 143px;
+  min-height: 800px;
+}
+.sub-menu {
+  flex-grow: (2/12);
+  padding: 20px;
+  color: $main-color;
+  background: $main-light-color;
+  box-sizing: border-box;
+  .sub-menu__title {
+    font-size: $typo-size-h2;
+  }
+  .sub-menu__list {
+    margin-top: 20px;
+    font-size: $typo-size-h4;
+    line-height: 1.5;
+    a:hover {
+      color: $main-dark-color;
+    }
+  }
 }
 
 .main-con {
-  width: 1200px;
-  margin: 0 auto;
-  &__inner {
-    padding: 0 20px;
-  }
-  &--fade-out {
-    opacity: 0;
+  padding: 20px;
+  flex-grow: (10/12);
+  .main-con__title {
+    font-size: $typo-size-h2;
   }
 }
 
-.sub-con {
-  margin: 10px;
+@each $sprite in $spritesheet-sprites {
+  $sprite-name: nth($sprite, 10);
+  .main-sprite--#{to-lower-case($sprite-name)} {
+    @include sprite($sprite);
+  }
+}
+
+.main-con__list {
+  display: flex;
+  li {
+    flex-basis: 1;
+    div {
+      height: 50x;
+    }
+  }
+}
+
+footer {
+  font-size: $typo-size-h4;
+  padding: 40px 20px;
+  color: $main-color;
+  background: $main-dark-color;
 }
