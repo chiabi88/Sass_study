@@ -20,6 +20,20 @@
 플랫폼에 구애받지 않는, 크로스 플랫폼  
 [agnostic](http://whatis.techtarget.com/definition/agnostic)
 
+Gulp 는 steaming build system 을 표방한다.
+즉, **Node의 스트림 기능** 으로 인해 이득을 얻는 빌드 시스템이란 의미다.
+
+> stream은 메모리 버퍼와 대역폭을 절약할 수 있는 이벤트 기반의 I/O 인터페이스를 제공한다.  
+예를 들어, 스트림은 대용량 파일 같은 경우, 파일 전체를 모두 로드하기 전에 메모리 버퍼를 절약하기 위해 무엇인가 다른 일을 빠르게 처리할 수 있다.  
+우리는 파일이 전체로 로드될 때까지 기다릴 필요없이 파일 일부를 쓰거나 어떤 처리를 할 수 있다.
+
+### gulp로 할 수 있는 일
++ 웹 서버 동작
++ Sass 컴파일
++ 편집기 툴에서 파일을 저장할때마다 웹브라우를 reload하여 새로고침없이 브라우저를 갱신 (browserSync)
++ 배포를 위한 리소스 최적화 (minify)
+
+
 ### Sample `gulpfile.js`
 
 ```javascript
@@ -76,7 +90,7 @@ gulp.task('default', ['watch', 'scripts', 'images']);
 
 ※ 이전에 전역적으로 gulp를 설치한 경우 `npm rm --global gulp`를 먼저 실행하라.
 
-Node와 npm 설치가 선행되어야 한다.
+gulp는 node.js의 스트림 기능을 기반으로 하고 있기 때문에 node.js와 npm 설치가 선행되어야 한다. 
 ```
 node --version
 npm --version
@@ -115,7 +129,11 @@ gulp
 
 ## 3. gulp API
 
-[gulp.src](#31-gulpsrcglobs-options) | [gulp.dest](#32-gulpdestpath-options) | [gulp.task](#33-gulptaskname-deps-fn) | [gulp.watch](#34-gulpwatchglob-opts-tasks-or-gulpwatchglob-opts-cb)
+> **바로가기**
+> + __[gulp.src(globs[, options]) ](#31-gulpsrcglobs-options)__ | 어떤 파일을 읽을지 정한다.
+> + __[gulp.dest(path[, options])](#32-gulpdestpath-options)__ | 어디에 저장할 지 정한다.
+> + __[gulp.task(name [, deps, fn])](#33-gulptaskname-deps-fn)__ | gulp가 처리할 작업(task)을 정의한다.
+> + __[gulp.watch(glob[, opts], tasks/cb)](#34-gulpwatchglob-opts-tasks-or-gulpwatchglob-opts-cb)__ | 전달된 glob에 해당하는 파일을 주시하다가 변동이 있을때 task들을 실행한다.
 
 ### 3.1. gulp.src(globs[, options])
 
@@ -613,6 +631,7 @@ imagemin: {
 ***
 
 + [gulp 한글화 문서](https://github.com/preco21/gulp-docs-ko/blob/master/API.md)
-+ [Gulp 사용법 #2 (gulp-concat)](http://webclub.tistory.com/468)
++ [Gulp #1(걸프 설치 및 개요)](http://webclub.tistory.com/468)
++ [[Node.js] 12.1 편: GULP – JavaScript 빌드 자동화툴 알아보기 + ES6 문법으로 사용해보기](https://velopert.com/1344)
 + [[Gulp.js] Gulp 입문 ① - Gulp에 대한 소개 | 감성 프로그래밍](http://programmingsummaries.tistory.com/356)
 + [왜 Grunt에서 Gulp로 갈아탔는가?](https://blog.outsider.ne.kr/1181)

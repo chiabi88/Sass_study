@@ -2,9 +2,7 @@
 var gulp = require('gulp'),
 
 /**
- * ========================
  * gulp 패키지 모듈 호출
- * =======================
  */
     // sass, css 관련
     sass = require('gulp-sass'),
