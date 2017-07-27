@@ -21,15 +21,23 @@
 node_modules/
 project/
     src/
+        js/
         stylesheet/
             *.css / *.scss / *.sass
         images/
-        sprites/
+            sprites/
             *.png / *.svg / *.jpg...
-        js/
         html/
     dist/
-    sassdoc/
+        js/
+        css/
+        images/
+            sprites/
+        html/
+sassdoc/
 gulpfile.js
 package.json
 ```
+
+@ gulp sassdoc parse Error로 html 파일 출력안되는 오류 수정 :  
+package.json에 author, bug, repository등 정보 입력하고 sassdoc options에 `verbose: true` 지정했더니 수정됨

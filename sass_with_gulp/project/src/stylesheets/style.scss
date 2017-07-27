@@ -5,11 +5,14 @@
 @import 'sprite';
 @import './base/reset';
 
-/* setting */
+/// 기본 폰트 사이즈
+/// @type {Number (with unit)}
 $base-font-size: 16px !default;
-// 글줄 사이(행간) 비율
+/// 글줄 사이(행간) 비율
+/// @type {Number}
 $leading-scale: 1.5;
-// 글줄 사이(행간) 간격
+/// 글줄 사이(행간) 간격
+/// @type {Number (with unit)}
 $leading: $base-font-size * $leading-scale;
 
 $typo-size-h1: 3.157rem;

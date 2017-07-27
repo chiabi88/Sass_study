@@ -25,14 +25,13 @@ var gulp = require('gulp'),
  */
 const DIR = {
   SRC   : 'project/src',
-  DIST  : 'project/dist',
-  DOCS  : 'project/docs'
+  DIST  : 'project/dist'
 };
 const SRC = {
   JS    : DIR.SRC + '/js/**/*.js',
   CSS   : DIR.SRC + '/stylesheets/**/*.scss',
   HTML  : DIR.SRC + '/html/**/*.html',
-  IMAGES: DIR.SRC + '/images/*'
+  IMAGES: DIR.SRC + '/images/**/*'
 };
 const DIST = {
   JS    : DIR.DIST + '/js',
@@ -102,7 +101,7 @@ var config = {
     browsers: ['last 2 versions', '> 5%', 'Firefox ESR']
   },
   'sassdoc': {
-    dest: DIR.DOCS + '/sassdoc'
+    verbose: true
   },
   // Browser-sync
   // Reference: http://www.browsersync.io/docs/options/
@@ -110,7 +109,7 @@ var config = {
 		server  : DIR.DIST,
     port    : 8080,
     // Don't show any notifications in the browser.
-		notify  : false,
+		notify  : false
 	}
 }
 
@@ -151,12 +150,8 @@ gulp.task('sass', function() {
              .pipe(autoprefixer(config.autoprefixer))
              .pipe(sourcemaps.write('./maps'))
              .pipe(gulp.dest(DIST.CSS))
+             .pipe(sassdoc(config.sassdoc))
              .pipe(reload({stream: true}));
-
-});
-gulp.task('sassdoc', function() {
-  return gulp.src(SRC.CSS)
-             .pipe(sassdoc(config.sassdoc));
 });
 /**
  * -------------------------------
