@@ -146,11 +146,11 @@ gulp.task('js', function() {
 gulp.task('sass', function() {
   return gulp.src(SRC.CSS)
              .pipe(sourcemaps.init())
+             .pipe(sassdoc(config.sassdoc))
              .pipe(sass(config.sass).on('error', sass.logError))
              .pipe(autoprefixer(config.autoprefixer))
              .pipe(sourcemaps.write('./maps'))
              .pipe(gulp.dest(DIST.CSS))
-             .pipe(sassdoc(config.sassdoc))
              .pipe(reload({stream: true}));
 });
 /**

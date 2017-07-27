@@ -8,66 +8,138 @@
 /// 기본 폰트 사이즈
 /// @type {Number (with unit)}
 $base-font-size: 16px !default;
+
 /// 글줄 사이(행간) 비율
 /// @type {Number}
 $leading-scale: 1.5;
+
 /// 글줄 사이(행간) 간격
 /// @type {Number (with unit)}
 $leading: $base-font-size * $leading-scale;
 
+/// 타이포 h1 사이즈
+/// @group typography
+/// @type {Number (with unit)}
 $typo-size-h1: 3.157rem;
+
+/// 타이포 h2 사이즈
+/// @group typography
+/// @type {Number (with unit)}
 $typo-size-h2: 2.369rem;
+
+/// 타이포 h3 사이즈
+/// @group typography
+/// @type {Number (with unit)}
 $typo-size-h3: 1.777rem;
+
+/// 타이포 h4 사이즈
+/// @group typography
+/// @type {Number (with unit)}
 $typo-size-h4: 1.333rem;
+
+/// 타이포 h5 사이즈
+/// @group typography
+/// @type {Number (with unit)}
 $typo-size-small: 0.75rem;
 
+/// 메인 컬러
+/// @group color
+/// @type {Color}
 $main-color: #583d4e;
+
+/// 메인 컬러 보다 밝은 컬러
+/// @group color
+/// @type {Color}
 $main-light-color: lighten($main-color, 50%);
+
+/// 메인 컬러 보다 어두운 컬러
+/// @group color
+/// @type {Color}
 $main-dark-color: darken($main-color, 50%);
 
+/// 보더 컬러
+/// @group color
+/// @type {Color}
 $border-color: rgb(238,238,238);
 
 // --------------------------------------------
 // 그리드 시스템 설계(Grid System Design)
 // --------------------------------------------
-// 그리드 시스템 가이드라인 토글 클래스
+
+/// 그리드 시스템 가이드라인 토글 클래스
+/// @group Toggle Grid
+/// @type {String}
 $toggle-classname: 'show-grid';
-// 그리드 시스템 가이드라인 높이
+/// 그리드 시스템 가이드라인 높이
+/// @group Toggle Grid
+/// @type {Number (with unit)}
 $guide-height: 100vh;
-// 컬럼의 총 개수
+/// 컬럼의 총 개수
+/// @group Toggle Grid
+/// @type {Number}
 $columns: 12;
-// 컬럼 폭
+/// 컬럼 폭
+/// @group Toggle Grid
+/// @type {Number (with unit)}
 $column-width: 8.33%;
-// 컬럼 가이드 색상
+/// 컬럼 가이드 색상
+/// @group Toggle Grid
+/// @type {Color}
 $column-color: rgba(#fb8989, 0.35);
-// 거터 방향
-// before, after, split, no-gutter, inside
+/// 거터 방향
+/// [before, after, split, no-gutter, inside]
+/// @group Toggle Grid
+/// @type {String}
 $gutter-position: 'split';
-// 거터 간격
+/// 거터 간격
+/// @group Toggle Grid
+/// @type {Number (with unit)}
 $gutter-width: 0;
+/// 거터 간격의 반
+/// @group Toggle Grid
+/// @type {Number (with unit)}
 $half-gutter-width: $gutter-width/2;
-// 페이지 총 폭의 길이를 구하는 함수
-// 70px * 12 + 20px * 12
-// ($column-width + $gutter-width) * $columns
+/// 페이지 총 폭의 길이를 구하는 함수
+///
+/// e.g. 70px * 12 + 20px * 12
+///
+/// [($column-width + $gutter-width) * $columns]
+/// @group Toggle Grid
+/// @type {Number (with unit)}
 $page-width: ($column-width + $gutter-width) * $columns;
 
-// 컬럼 개수에 따른 폭(width) 구하는 공식
-// = 컬럼_폭 × 컬럼_개수 + 거터_폭(합) * (컬럼_개수 - 1)
-// calc( 70px * $i + (10px * 2) * ($i - 1) )
+/// 컬럼 개수에 따른 폭(width) 구하는 공식
+///
+/// = 컬럼_폭 × 컬럼_개수 + 거터_폭(합) * (컬럼_개수 - 1)
+///
+/// e.g. calc( 70px * $i + (10px * 2) * ($i - 1) )
+/// @group Toggle Grid
+/// @author yamoo9
+/// @param {Number} $n - 컬럼 개수
 @function column-width($n) {
   @return $column-width * $n + $gutter-width * ($n - 1);
 }
-// 옵셋 개수에 따른 마진(margin-left) 구하는 공식
-// = 컬럼_폭 × 컬럼_개수 + (컬럼_폭 + 거터_절반_폭)
+/// 옵셋 개수에 따른 마진(margin-left) 구하는 공식
+///
+/// = 컬럼_폭 × 컬럼_개수 + (컬럼_폭 + 거터_절반_폭)
+/// @group Toggle Grid
+/// @author yamoo9
+/// @param {Number} $n - 옵셋 개수
 @function offset-width($n) {
   @return column-width($n) + ($gutter-width + $half-gutter-width);
 }
-// Isolate Floating 방법 사용 시, 사용되는 order-width() 함수
-// 오더(순서)에 따른 폭 구하는 공식
-// 거터_절반_폭 + ( (거터_폭 + 컬럼_폭) * (순서 - 1) )
+/// Isolate Floating 방법 사용 시, 사용되는 order-width() 함수
+///
+/// 오더(순서)에 따른 폭 구하는 공식
+/// 
+/// 거터_절반_폭 + ( (거터_폭 + 컬럼_폭) * (순서 - 1) )
+/// @group Toggle Grid
+/// @author yamoo9
+/// @param {Number} $n - 오더(순서)
 @function order-width($n) {
   @return $half-gutter-width + ( ($gutter-width + $column-width) * ($n - 1) );
 }
+
 // Toggle Grid Module
 // 브라우저 뷰에 그리드 가이드를 토글(보임/감춤)하는 스타일 모듈
 // .show-grid
