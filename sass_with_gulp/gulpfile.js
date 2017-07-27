@@ -15,7 +15,7 @@ var gulp = require('gulp'),
     sourcemaps = require('gulp-sourcemaps'),
     merge = require('merge-stream'),
     del = require('del'),
-    browserSync  = require('browser-sync'),
+    browserSync  = require('browser-sync').create(),
     reload = browserSync.reload;
 
 /**
@@ -106,7 +106,10 @@ var config = {
   // Browser-sync
   // Reference: http://www.browsersync.io/docs/options/
 	'browserSync': { 
-		server  : DIR.DIST,
+		server  : {
+      baseDir   : DIR.DIST,
+      directory : true
+    },
     port    : 8080,
     // Don't show any notifications in the browser.
 		notify  : false
