@@ -61,7 +61,7 @@ webpack은 CommonJS와 AMD(Asynchronous Module Definition) 두 그룹 명세(모
 ### 1. 글로벌 설치, 로컬에 개발 환경으로 설치
 
 ```sh
-npm i -g webpack && npm i -D webpack
+$ npm i -g webpack && npm i -D webpack
 ```
 
 ### 2. webpack.config.js

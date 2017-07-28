@@ -92,18 +92,18 @@ gulp.task('default', ['watch', 'scripts', 'images']);
 
 gulp는 node.js의 스트림 기능을 기반으로 하고 있기 때문에 node.js와 npm 설치가 선행되어야 한다. 
 ```
-node --version
-npm --version
+$ node --version
+$ npm --version
 ```
 
 **`gulp`** command를 전역적으로 설치한다.
 ```
-npm install --global gulp-cli
+$ npm install --global gulp-cli
 ```
 
 **`package.json`** 을 생성해서 **`gulp`** 를 devDependencies에 설치한다.
 ```
-npm install --save-dev gulp
+$ npm install --save-dev gulp
 ```
 
 프로젝트 디렉토리에 **`gulpfile.js`** 를 생성한뒤 다음 내용을 작성한다. 
@@ -117,7 +117,7 @@ gulp.task('default', function(){
 
 프로젝트 디렉토리에서 작성한 **`gulp`** 명령어를 실행한다.
 ```
-gulp
+$ gulp
 ```
 
 ※ gulp의 default task는 아무것도 실행하지 않는다.
