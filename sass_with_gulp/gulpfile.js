@@ -163,7 +163,7 @@ gulp.task('sass', function() {
  */
 // task : IMG 파일 minify해서 dist 폴더에 넣기 
 gulp.task('images', ['sprite'], function() {
-  return gulp.src([SRC.IMAGES, '!' + DIR.SRC + '/images/sprites'])
+  return gulp.src([SRC.IMAGES, '!' + DIR.SRC + '/images/sprites/*'])
              .pipe(imagemin())
 			       .pipe(gulp.dest(DIST.IMAGES));
 });
@@ -193,7 +193,7 @@ gulp.task('watch', function() {
   gulp.watch(SRC.JS, ['js']);
   gulp.watch(SRC.CSS, ['sass']);
   gulp.watch(SRC.HTML, ['html']);
-  gulp.watch(SRC.IMAGES, ['images']);
+  gulp.watch([SRC.IMAGES, '!' + DIR.SRC + '/images/sprites/*'], ['images']);
   gulp.watch(DIR.SRC + '/images/sprites/*.png', ['sprite']);
 });
 

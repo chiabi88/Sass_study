@@ -635,3 +635,7 @@ imagemin: {
 + [[Node.js] 12.1 편: GULP – JavaScript 빌드 자동화툴 알아보기 + ES6 문법으로 사용해보기](https://velopert.com/1344)
 + [[Gulp.js] Gulp 입문 ① - Gulp에 대한 소개 | 감성 프로그래밍](http://programmingsummaries.tistory.com/356)
 + [왜 Grunt에서 Gulp로 갈아탔는가?](https://blog.outsider.ne.kr/1181)
+
+***
+
++ [Handling Sync Tasks with Gulp JS](https://cameronspear.com/blog/handling-sync-tasks-with-gulp-js/)
